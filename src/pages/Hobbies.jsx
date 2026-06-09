@@ -11,6 +11,8 @@ const hobbies = [
     quote: 'Great work is built the same way a team wins: trust first, execution second.',
     details:
       'Individual talent only gets you so far in soccer. The game rewards people who communicate well, read the situation quickly, and do not panic when things get tight. I try to be that person on every team I am part of.',
+    image: '/soccer.jpg',
+    imageAlt: 'Soccer',
   },
   {
     title: 'Bowling',
@@ -41,6 +43,8 @@ const hobbies = [
     quote: 'The hills are hard every time. You just learn to trust that you will get there.',
     details:
       'That never quite goes away, the difficulty of the hills. But I have learned to trust that if I keep pedaling, I will get there. That mindset has gotten me through more than a few difficult projects.',
+    image: '/cycling.jpeg',
+    imageAlt: 'Cycling',
   },
   {
     title: 'Photography',
@@ -50,15 +54,20 @@ const hobbies = [
     quote: 'What you leave out of a frame matters as much as what you keep in.',
     details:
       'I prefer natural light and moments that are not staged. The practice of deciding what to include and what to cut has helped me communicate more clearly in everything else I do.',
+    image: '/photography.jpg',
+    imageAlt: 'Photography moment',
   },
   {
     title: 'Gardening',
     tag: 'Patience and Growth',
     summary:
-      'Gardening is about accepting that things take as long as they take. You put in the work, create good conditions, and then wait. You cannot rush it. That is a good reminder for anyone who works in tech.',
-    quote: 'You cannot control everything in a garden. Eventually you stop trying to.',
+      'Gardening taught me that patience and consistency matter more than intensity. You cannot force a plant to grow faster by checking on it every hour. You show up, do the work, and trust the process.',
+    quote: 'Consistency beats effort. The garden does not care how hard you tried today.',
     details:
-      'You learn what conditions things need, you create those conditions, and you let nature do the rest. I have carried that approach into how I work with teams and codebases alike.',
+      'The best results in a garden come from steady, repeated action over time. Water on schedule, prune when needed, adjust when something is not working. That same rhythm shows up in everything I take seriously. Skill, fitness, relationships, code quality. None of them respond to shortcuts. They all respond to showing up regularly and doing the small things right, even when there is nothing exciting to show for it yet.',
+    image: '/gardening.jpeg',
+    imageAlt: 'Gardening',
+    imageFit: 'contain',
   },
   {
     title: 'Hot Air Balloon Adventures',
@@ -116,7 +125,7 @@ export default function Hobbies() {
               <div className="hobby-media">
                 {hobby.image && (
                   <div
-                    className="hobby-media-img"
+                    className={`hobby-media-img${hobby.imageFit === 'contain' ? ' contain' : ''}`}
                     onClick={() => setLightbox({ src: hobby.image, alt: hobby.imageAlt })}
                     role="button"
                     tabIndex={0}

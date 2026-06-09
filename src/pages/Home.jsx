@@ -1,7 +1,5 @@
-import { useState } from 'react'
 import { Shield, Code2, Sparkles, ExternalLink } from 'lucide-react'
 import { useReveal } from '../hooks/useReveal'
-import Lightbox from '../components/Lightbox'
 
 const serviceCards = [
   {
@@ -10,13 +8,15 @@ const serviceCards = [
     description:
       'Security starts with understanding what you are actually protecting and why. I have worked in security operations, managed vulnerability programs with Qualys VMDR, and helped teams get ahead of exposure before it turns into an incident.',
     bullets: ['Security operations', 'Vulnerability management', 'Cloud security', 'Risk reduction'],
+    image: '/security.png',
   },
   {
     icon: <Code2 size={22} />,
-    title: 'Software Engineering',
+    title: 'Software Development',
     description:
       'I build web applications, APIs, and automation systems. My focus is on writing code that works correctly, reads clearly, and does not create more problems down the road.',
     bullets: ['Web applications', 'API design', 'Automation workflows', 'Scalable systems'],
+    image: '/software.png',
   },
   {
     icon: <Sparkles size={22} />,
@@ -24,6 +24,7 @@ const serviceCards = [
     description:
       'I have built RAG applications on AWS Bedrock, agentic workflows using MCP servers, and AI assistants that cut the time teams spend navigating complex information. These tools are most useful when they handle the tedious parts so people can focus on the real work.',
     bullets: ['AI-powered assistants', 'RAG applications', 'Agentic workflows', 'Business automation'],
+    image: '/Forensics agent.png',
   },
 ]
 
@@ -44,17 +45,8 @@ const values = [
   'Accountability',
 ]
 
-const galleryItems = [
-  { src: '/graduation-1.jpg', alt: 'Graduation milestone', className: 'gallery-tall' },
-  { src: '/balloon-2.jpg', alt: 'Hot air balloon operations', className: 'gallery-wide' },
-  { src: '/backpacking-yosemite.jpg', alt: 'Backpacking in Yosemite' },
-  { src: '/raisin-lake-yosemite.jpg', alt: 'Raisin Lake trail, Yosemite' },
-  { src: '/humboldt-helpers.jpg', alt: 'Community impact work', className: 'gallery-wide' },
-]
-
 export default function Home() {
   useReveal()
-  const [lightbox, setLightbox] = useState(null)
 
   return (
     <div className="page-content">
@@ -131,7 +123,7 @@ export default function Home() {
           </p>
         </div>
         <div className="about-image">
-          <img src="/humboldt-helpers.jpg" alt="Humboldt Helpers AI campus assistant project" />
+          <img src="/Wazuh SIEM.png" alt="Wazuh SIEM security operations dashboard" />
         </div>
       </section>
 
@@ -147,6 +139,11 @@ export default function Home() {
               <div className="service-icon">{card.icon}</div>
               <h4>{card.title}</h4>
               <p>{card.description}</p>
+              {card.image && (
+                <div className="service-card-img">
+                  <img src={card.image} alt={`${card.title} project screenshot`} />
+                </div>
+              )}
               <ul>
                 {card.bullets.map((b) => (
                   <li key={b}>{b}</li>
@@ -189,35 +186,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── GALLERY ── */}
-      <section className="gallery-section">
-        <div className="section-headline reveal">
-          <div className="section-label">Personal Perspective</div>
-          <h3>Places and moments that have stuck with me.</h3>
-        </div>
-        <div className="gallery-grid reveal">
-          {galleryItems.map((item) => (
-            <div
-              key={item.alt}
-              className={`gallery-card${item.className ? ` ${item.className}` : ''}`}
-              onClick={() => setLightbox(item)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && setLightbox(item)}
-              aria-label={`View ${item.alt}`}
-            >
-              <img src={item.src} alt={item.alt} loading="lazy" />
-              <div className="gallery-overlay">
-                <span>{item.alt}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {lightbox && (
-        <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
-      )}
     </div>
   )
 }
