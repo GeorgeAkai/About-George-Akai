@@ -373,6 +373,219 @@ h1, h2, h3, h4 { margin: 0; }
 }
 
 /* ============================================================
+   LANDING — HERO VISUAL PANEL
+   ============================================================ */
+.hero-visual-wrap {
+  position: relative;
+  animation: float 7s ease-in-out infinite;
+}
+
+.hero-visual-panel {
+  position: relative;
+  z-index: 1;
+  padding: 34px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 36px 90px rgba(0, 0, 0, 0.45);
+}
+
+.hero-visual-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+.hero-visual-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--r-md);
+  background: rgba(79, 126, 255, 0.1);
+  border: 1px solid rgba(79, 126, 255, 0.2);
+  display: grid;
+  place-items: center;
+  color: var(--accent-2);
+}
+
+.hero-visual-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+.hero-visual-note {
+  color: var(--text-2);
+  font-size: 0.86rem;
+}
+
+/* ============================================================
+   LANDING — TRUST STRIP
+   ============================================================ */
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.trust-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 22px;
+  border-radius: var(--r-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.trust-value {
+  font-weight: 800;
+  font-size: 1.15rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trust-label {
+  color: var(--text-2);
+  font-size: 0.82rem;
+}
+
+/* ============================================================
+   LANDING — SERVICE CARD CTA
+   ============================================================ */
+.service-card-cta {
+  align-self: flex-start;
+  padding: 0;
+  margin-top: -4px;
+}
+
+/* ============================================================
+   LANDING — PROCESS
+   ============================================================ */
+.process-section { display: flex; flex-direction: column; gap: 28px; }
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.process-step {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.process-step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79, 126, 255, 0.28);
+}
+
+.process-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.process-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-md);
+  background: rgba(79, 126, 255, 0.1);
+  border: 1px solid rgba(79, 126, 255, 0.2);
+  display: grid;
+  place-items: center;
+  color: var(--accent-2);
+}
+
+.process-number {
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--text-3);
+}
+
+.process-step h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.process-step p {
+  color: var(--text-2);
+  line-height: 1.65;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   LANDING — CHECKLIST (Why Work With Me)
+   ============================================================ */
+.checklist {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-2);
+  font-size: 0.95rem;
+}
+
+.checklist li svg { color: var(--accent-2); flex-shrink: 0; }
+
+/* ============================================================
+   LANDING — CTA BANNER
+   ============================================================ */
+.cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 42px 48px;
+}
+
+.cta-banner h3 {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.cta-banner p {
+  color: var(--text-2);
+  font-size: 0.98rem;
+}
+
+/* ============================================================
+   ABOUT — CLOSING CTA
+   ============================================================ */
+.about-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 40px 48px;
+}
+
+.about-cta h3 {
+  font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  max-width: 40ch;
+}
+
+/* ============================================================
    HOME — ABOUT
    ============================================================ */
 .about-section {
@@ -856,6 +1069,86 @@ h1, h2, h3, h4 { margin: 0; }
   max-width: 58ch;
 }
 
+/* === CONTACT FORM === */
+.contact-form-section {
+  padding: 44px 48px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  color: var(--text);
+  padding: 13px 16px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+  width: 100%;
+}
+
+.form-field textarea { resize: vertical; min-height: 130px; }
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-3);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.form-field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-2) 50%), linear-gradient(135deg, var(--text-2) 50%, transparent 50%);
+  background-position: calc(100% - 20px) center, calc(100% - 15px) center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.form-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.form-note {
+  color: var(--text-3);
+  font-size: 0.83rem;
+  line-height: 1.6;
+  max-width: 42ch;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -953,6 +1246,19 @@ h1, h2, h3, h4 { margin: 0; }
 
   .highlight-grid { grid-template-columns: repeat(2, 1fr); }
 
+  .trust-strip { grid-template-columns: repeat(2, 1fr); }
+
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .form-grid { grid-template-columns: 1fr; }
+
+  .cta-banner,
+  .about-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 34px 36px;
+  }
+
   .values-section {
     grid-template-columns: 1fr;
     gap: 26px;
@@ -1048,6 +1354,13 @@ h1, h2, h3, h4 { margin: 0; }
   /* Contact */
   .contact-hero { padding: 28px 22px; }
   .contact-card { padding: 26px 22px; }
+  .contact-form-section { padding: 26px 22px; }
+
+  /* Landing */
+  .trust-strip { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .trust-pill { padding: 14px 16px; }
+  .process-grid { grid-template-columns: 1fr; }
+  .cta-banner, .about-cta { padding: 26px 22px; }
 
   /* Buttons */
   .button-primary, .button-secondary {

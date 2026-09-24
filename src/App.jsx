@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import Home from './pages/Home'
+import Landing from './pages/Landing'
+import About from './pages/About'
 import Hobbies from './pages/Hobbies'
 import Contact from './pages/Contact'
 
@@ -20,8 +21,8 @@ function AppInner() {
         <div className="brand-row">
           <div className="brand-mark">GA</div>
           <div className="brand-copy">
-            <p className="brand-name">George Akai</p>
-            <span>Cybersecurity · Software · AI</span>
+            <p className="brand-name">George Akai Tech Consulting</p>
+            <span>Software · AI · Cybersecurity</span>
           </div>
         </div>
 
@@ -33,21 +34,22 @@ function AppInner() {
           <NavLink className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} to="/">
             Home
           </NavLink>
-          <NavLink className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} to="/beyond">
-            Beyond Technology
+          <NavLink className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} to="/about">
+            About
           </NavLink>
           <NavLink className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} to="/contact">
-            Connect
+            Contact
           </NavLink>
-          <a className="nav-button" href="/resume.pdf" target="_blank" rel="noreferrer">
-            Resume
-          </a>
+          <NavLink className="nav-button" to="/contact">
+            Get a Quote
+          </NavLink>
         </nav>
       </header>
 
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/about" element={<About />} />
           <Route path="/beyond" element={<Hobbies />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
@@ -55,9 +57,12 @@ function AppInner() {
 
       <footer className="site-footer">
         <p className="footer-copy">
-          George Akai
+          George Akai Tech Consulting
+          <br />
+          <a href="mailto:info@georgeakaitechconsulting.com">info@georgeakaitechconsulting.com</a>
         </p>
         <div className="footer-links">
+          <NavLink to="/beyond">Beyond the Work</NavLink>
           <a href="https://www.linkedin.com/in/georgeakai/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://github.com/georgeakai" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://georgeakai.github.io/my-portfolio/about.html" target="_blank" rel="noreferrer">Portfolio</a>

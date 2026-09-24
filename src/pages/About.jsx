@@ -1,7 +1,8 @@
-import { Shield, Code2, Sparkles, ExternalLink } from 'lucide-react'
+import { Shield, Code2, Sparkles, ExternalLink, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useReveal } from '../hooks/useReveal'
 
-const serviceCards = [
+const experienceCards = [
   {
     icon: <Shield size={22} />,
     title: 'Cybersecurity',
@@ -45,7 +46,7 @@ const values = [
   'Accountability',
 ]
 
-export default function Home() {
+export default function About() {
   useReveal()
 
   return (
@@ -53,7 +54,7 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="hero-section">
         <div className="hero-copy reveal">
-          <p className="eyebrow">Cybersecurity Analyst · Software Engineer · AI Solutions Developer</p>
+          <p className="eyebrow">Founder, George Akai Tech Consulting</p>
           <h1>
             Building{' '}
             <span className="gradient-text">Secure Systems</span>,
@@ -63,24 +64,20 @@ export default function Home() {
           <p className="hero-paragraph">
             Hi, I'm George Akai. My work covers cybersecurity, software engineering, and AI.
             I care about building systems that are actually secure and software that holds up when it needs to.
+            That combination is why I started this consultancy.
           </p>
           <div className="hero-actions">
+            <Link className="button button-primary" to="/contact">
+              Work With Me
+            </Link>
             <a
-              className="button button-primary"
+              className="button button-secondary"
               href="https://georgeakai.github.io/my-portfolio/about.html"
               target="_blank"
               rel="noreferrer"
             >
               <ExternalLink size={16} />
               View Portfolio
-            </a>
-            <a
-              className="button button-secondary"
-              href="https://www.linkedin.com/in/georgeakai/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Connect on LinkedIn
             </a>
             <a className="button button-tertiary" href="/resume.pdf" target="_blank" rel="noreferrer">
               Download Resume →
@@ -117,9 +114,11 @@ export default function Home() {
             tools that help teams make decisions faster. That feels like a genuinely useful place to be right now.
           </p>
           <p>
-            I am always studying something new, whether it is a different security framework, a better way to
-            structure an agent, or a topic completely outside my field. Staying curious is the habit that keeps
-            everything else moving.
+            I started George Akai Tech Consulting to bring that same mix of security-first thinking, clean
+            engineering, and practical AI to businesses that need it but do not have it in-house. I am always
+            studying something new, whether it is a different security framework, a better way to structure an
+            agent, or a topic completely outside my field. Staying curious is the habit that keeps everything else
+            moving.
           </p>
         </div>
         <div className="about-image">
@@ -127,14 +126,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WHAT I DO ── */}
+      {/* ── EXPERIENCE ── */}
       <section className="work-section">
         <div className="section-headline reveal">
-          <div className="section-label">What I Do</div>
+          <div className="section-label">Background</div>
           <h3>Practical experience across security, software, and AI.</h3>
         </div>
         <div className="card-grid">
-          {serviceCards.map((card, i) => (
+          {experienceCards.map((card, i) => (
             <article key={card.title} className={`service-card glass-panel reveal reveal-delay-${i + 1}`}>
               <div className="service-icon">{card.icon}</div>
               <h4>{card.title}</h4>
@@ -184,6 +183,17 @@ export default function Home() {
             <div key={v} className="value-pill">{v}</div>
           ))}
         </div>
+      </section>
+
+      {/* ── CLOSING CTA ── */}
+      <section className="about-cta glass-panel reveal">
+        <div>
+          <div className="section-label">Outside of Work</div>
+          <h3>Soccer, hiking, bowling, and a few other things that keep me grounded.</h3>
+        </div>
+        <Link className="button button-secondary" to="/beyond">
+          Beyond the Work <ArrowRight size={16} />
+        </Link>
       </section>
 
     </div>
