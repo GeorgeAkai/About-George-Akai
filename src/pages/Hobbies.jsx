@@ -102,7 +102,7 @@ export default function Hobbies() {
       {/* ── HERO ── */}
       <section className="hobby-hero glass-panel reveal">
         <div className="section-label">Beyond Technology</div>
-        <h2>Work is important to me, but some of my best thinking happens when I am completely away from a screen.</h2>
+        <h1>Work is important to me, but some of my best thinking happens when I am completely away from a screen.</h1>
         <p>
           Bowling, hiking, soccer, gardening. These are not hobbies I picked to look interesting on a website.
           They are things I actually do, and they have shaped how I think about patience, teamwork, and showing up consistently.
@@ -156,7 +156,7 @@ export default function Hobbies() {
       <section className="gallery-section">
         <div className="section-headline reveal">
           <div className="section-label">Photo Gallery</div>
-          <h3>Places and moments that have stuck with me.</h3>
+          <h2>Places and moments that have stuck with me.</h2>
         </div>
         <div className="gallery-grid reveal">
           {galleryItems.map((item) => (

@@ -1,0 +1,24 @@
+{
+  "name": "George Akai Tech Consulting",
+  "short_name": "GA Tech Consulting",
+  "description": "Software and web development, AI chatbot integrations, and cybersecurity consulting.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050811",
+  "theme_color": "#050811",
+  "icons": [
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

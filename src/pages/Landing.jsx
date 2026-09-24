@@ -26,7 +26,7 @@ const services = [
     icon: <Bot size={22} />,
     title: 'AI Chatbot Integrations',
     description:
-      'AI assistants and chatbots that actually know your business — trained on your documents and workflows, integrated into your site or internal tools.',
+      'AI assistants and chatbots that actually know your business, trained on your documents and workflows and integrated into your site or internal tools.',
     bullets: ['Custom RAG-based chatbots', 'Website & support chat assistants', 'Internal knowledge assistants', 'Workflow & agentic automation'],
     image: '/AI RAG chat assistant.png',
     imageAlt: 'AI RAG chat assistant screenshot',
@@ -35,7 +35,7 @@ const services = [
     icon: <ShieldCheck size={22} />,
     title: 'Cybersecurity Consulting & Engineering',
     description:
-      'Practical security work grounded in real security operations experience — vulnerability management, security monitoring, and hardening that fits your risk and budget.',
+      'Practical security work grounded in real security operations experience: vulnerability management, security monitoring, and hardening that fits your risk and budget.',
     bullets: ['Vulnerability management', 'Security monitoring (SIEM)', 'Cloud security (AWS)', 'Risk assessments & hardening'],
     image: '/sofelk.png',
     imageAlt: 'Security operations dashboard screenshot',
@@ -72,7 +72,7 @@ const process = [
     icon: <LifeBuoy size={20} />,
     step: '04',
     title: 'Launch & Support',
-    description: 'Delivery, documentation, and support after launch — I do not disappear once it ships.',
+    description: 'Delivery, documentation, and support after launch. I do not disappear once it ships.',
   },
 ]
 
@@ -92,7 +92,7 @@ export default function Landing() {
           </h1>
           <p className="hero-paragraph">
             I design and build web applications, integrate AI chatbots that actually know your business, and provide
-            cybersecurity consulting grounded in real security operations experience — so you get software that works
+            cybersecurity consulting grounded in real security operations experience, so you get software that works
             and holds up under real use.
           </p>
           <div className="hero-actions">
@@ -143,7 +143,7 @@ export default function Landing() {
       <section className="work-section" id="services">
         <div className="section-headline reveal">
           <div className="section-label">Services</div>
-          <h3>Three ways I can help your business run better.</h3>
+          <h2>Three ways I can help your business run better.</h2>
         </div>
         <div className="card-grid">
           {services.map((card, i) => (
@@ -173,7 +173,7 @@ export default function Landing() {
       <section className="process-section">
         <div className="section-headline reveal">
           <div className="section-label">How It Works</div>
-          <h3>A straightforward process, start to finish.</h3>
+          <h2>A straightforward process, start to finish.</h2>
         </div>
         <div className="process-grid">
           {process.map((p, i) => (
@@ -195,7 +195,7 @@ export default function Landing() {
           <div className="section-label">Why Work With Me</div>
           <h2>One person, three disciplines, no handoffs between teams.</h2>
           <p>
-            Most freelancers or agencies specialize in one lane — a developer who does not think about security, or a
+            Most freelancers or agencies specialize in one lane: a developer who does not think about security, or a
             security consultant who cannot build the fix. I have hands-on experience in security operations,
             vulnerability management, software engineering, and applied AI, which means the person who scopes your
             project is the same person who builds and secures it.
@@ -218,7 +218,7 @@ export default function Landing() {
       {/* ── CTA BANNER ── */}
       <section className="cta-banner glass-panel reveal">
         <div>
-          <h3>Have a project in mind?</h3>
+          <h2>Have a project in mind?</h2>
           <p>Tell me what you're working on and I'll get back to you with next steps.</p>
         </div>
         <Link className="button button-primary" to="/contact">

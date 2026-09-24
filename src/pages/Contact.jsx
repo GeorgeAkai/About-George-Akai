@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link2, GitBranch, Globe, Mail, ArrowUpRight, Send } from 'lucide-react'
+import { Link2, Globe, Mail, ArrowUpRight, Send } from 'lucide-react'
 import { useReveal } from '../hooks/useReveal'
 
 const BUSINESS_EMAIL = 'info@georgeakaitechconsulting.com'
@@ -25,13 +25,6 @@ const links = [
     handle: 'linkedin.com/in/georgeakai',
     description: 'I post regularly about cybersecurity, AI projects, and what I am working on.',
     href: 'https://www.linkedin.com/in/georgeakai/',
-  },
-  {
-    icon: <GitBranch size={22} />,
-    title: 'GitHub',
-    handle: 'github.com/georgeakai',
-    description: 'Automation scripts, AI experiments, and security tooling. Code that shows how I actually work.',
-    href: 'https://github.com/georgeakai',
   },
   {
     icon: <Globe size={22} />,
@@ -60,7 +53,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const subject = `New inquiry: ${form.service} — ${form.name}`
+    const subject = `New inquiry: ${form.service} - ${form.name}`
     const bodyLines = [
       `Name: ${form.name}`,
       `Email: ${form.email}`,
@@ -79,9 +72,9 @@ export default function Contact() {
     <div className="page-content">
       <section className="contact-hero glass-panel reveal">
         <div className="section-label">Let's Talk About Your Project</div>
-        <h2>
+        <h1>
           Whether you need a website built, an AI chatbot integrated, or a security review, I'm easy to reach.
-        </h2>
+        </h1>
         <p>
           Fill out the form below or reach out directly. I'll get back to you with next steps, usually within a
           couple of business days.

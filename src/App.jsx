@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import Landing from './pages/Landing'
 import About from './pages/About'
 import Hobbies from './pages/Hobbies'
 import Contact from './pages/Contact'
+import { useTheme } from './hooks/useTheme'
+import { useSEO } from './hooks/useSEO'
 
 function AppInner() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const { theme, toggleTheme } = useTheme()
+  useSEO()
 
   useEffect(() => {
     setMenuOpen(false)
@@ -26,9 +30,19 @@ function AppInner() {
           </div>
         </div>
 
-        <button className="nav-toggle" onClick={() => setMenuOpen((o) => !o)} aria-label="Toggle navigation">
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="header-actions">
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
+          <button className="nav-toggle" onClick={() => setMenuOpen((o) => !o)} aria-label="Toggle navigation">
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
 
         <nav className={`site-nav${menuOpen ? ' open' : ''}`}>
           <NavLink className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')} to="/">
@@ -64,7 +78,6 @@ function AppInner() {
         <div className="footer-links">
           <NavLink to="/beyond">Beyond the Work</NavLink>
           <a href="https://www.linkedin.com/in/georgeakai/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://github.com/georgeakai" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://georgeakai.github.io/my-portfolio/about.html" target="_blank" rel="noreferrer">Portfolio</a>
         </div>
       </footer>
