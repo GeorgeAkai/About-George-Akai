@@ -71,8 +71,7 @@ export default function Contact() {
       <section className="contact-form-section glass-panel reveal">
         {formspreeState.succeeded ? (
           <p className="form-success">
-            Thanks, {form.name || 'there'} — your message is on its way. I'll get back to you within a couple of
-            business days.
+            Thanks, {form.name || 'there'}, your message is on its way. I'll get back to you soon.
           </p>
         ) : (
           <form className="contact-form" onSubmit={handleFormspreeSubmit}>
