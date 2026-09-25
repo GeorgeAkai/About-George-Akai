@@ -1213,6 +1213,17 @@ h1, h2, h3, h4 { margin: 0; }
   max-width: 42ch;
 }
 
+.form-success {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.form-field .field-error {
+  color: #e5484d;
+  font-size: 0.82rem;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

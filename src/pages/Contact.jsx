@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 import { Link2, Globe, Mail, ArrowUpRight, Send } from 'lucide-react'
 import { useReveal } from '../hooks/useReveal'
+
+const FORMSPREE_FORM_ID = 'mjykojpl'
 
 const BUSINESS_EMAIL = 'info@georgeakaitechconsulting.com'
 
@@ -38,6 +41,8 @@ const links = [
 export default function Contact() {
   useReveal()
 
+  const [formspreeState, handleFormspreeSubmit] = useForm(FORMSPREE_FORM_ID)
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -48,24 +53,6 @@ export default function Contact() {
 
   const handleChange = (field) => (e) => {
     setForm((f) => ({ ...f, [field]: e.target.value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    const subject = `New inquiry: ${form.service} - ${form.name}`
-    const bodyLines = [
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      form.company ? `Company: ${form.company}` : null,
-      `Service: ${form.service}`,
-      '',
-      'Message:',
-      form.message,
-    ].filter(Boolean)
-
-    const mailtoUrl = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`
-    window.location.href = mailtoUrl
   }
 
   return (
@@ -82,52 +69,62 @@ export default function Contact() {
       </section>
 
       <section className="contact-form-section glass-panel reveal">
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-grid">
-            <div className="form-field">
-              <label htmlFor="name">Name</label>
-              <input id="name" type="text" required value={form.name} onChange={handleChange('name')} placeholder="Jane Smith" />
+        {formspreeState.succeeded ? (
+          <p className="form-success">
+            Thanks, {form.name || 'there'} — your message is on its way. I'll get back to you within a couple of
+            business days.
+          </p>
+        ) : (
+          <form className="contact-form" onSubmit={handleFormspreeSubmit}>
+            <div className="form-grid">
+              <div className="form-field">
+                <label htmlFor="name">Name</label>
+                <input id="name" name="name" type="text" required value={form.name} onChange={handleChange('name')} placeholder="Jane Smith" />
+              </div>
+              <div className="form-field">
+                <label htmlFor="email">Email</label>
+                <input id="email" name="email" type="email" required value={form.email} onChange={handleChange('email')} placeholder="jane@company.com" />
+                <ValidationError prefix="Email" field="email" errors={formspreeState.errors} className="field-error" />
+              </div>
+              <div className="form-field">
+                <label htmlFor="company">Company (optional)</label>
+                <input id="company" name="company" type="text" value={form.company} onChange={handleChange('company')} placeholder="Company name" />
+              </div>
+              <div className="form-field">
+                <label htmlFor="service">Service you're interested in</label>
+                <select id="service" name="service" value={form.service} onChange={handleChange('service')}>
+                  {serviceOptions.map((option) => (
+                    <option key={option} value={option}>{option}</option>
+                  ))}
+                </select>
+              </div>
             </div>
-            <div className="form-field">
-              <label htmlFor="email">Email</label>
-              <input id="email" type="email" required value={form.email} onChange={handleChange('email')} placeholder="jane@company.com" />
-            </div>
-            <div className="form-field">
-              <label htmlFor="company">Company (optional)</label>
-              <input id="company" type="text" value={form.company} onChange={handleChange('company')} placeholder="Company name" />
-            </div>
-            <div className="form-field">
-              <label htmlFor="service">Service you're interested in</label>
-              <select id="service" value={form.service} onChange={handleChange('service')}>
-                {serviceOptions.map((option) => (
-                  <option key={option} value={option}>{option}</option>
-                ))}
-              </select>
-            </div>
-          </div>
 
-          <div className="form-field">
-            <label htmlFor="message">Tell me about your project</label>
-            <textarea
-              id="message"
-              required
-              rows={6}
-              value={form.message}
-              onChange={handleChange('message')}
-              placeholder="What are you looking to build, integrate, or secure?"
-            />
-          </div>
+            <div className="form-field">
+              <label htmlFor="message">Tell me about your project</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={6}
+                value={form.message}
+                onChange={handleChange('message')}
+                placeholder="What are you looking to build, integrate, or secure?"
+              />
+              <ValidationError prefix="Message" field="message" errors={formspreeState.errors} className="field-error" />
+            </div>
 
-          <div className="form-submit-row">
-            <button type="submit" className="button button-primary">
-              <Send size={16} />
-              Send Inquiry
-            </button>
-            <p className="form-note">
-              This opens your email app with your message pre-filled, addressed to {BUSINESS_EMAIL}.
-            </p>
-          </div>
-        </form>
+            <div className="form-submit-row">
+              <button type="submit" className="button button-primary" disabled={formspreeState.submitting}>
+                <Send size={16} />
+                {formspreeState.submitting ? 'Sending…' : 'Send Inquiry'}
+              </button>
+              <p className="form-note">
+                Sends directly to {BUSINESS_EMAIL}.
+              </p>
+            </div>
+          </form>
+        )}
       </section>
 
       <div className="contact-grid">
