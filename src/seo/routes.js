@@ -5,9 +5,9 @@ export const DEFAULT_LOCALE = 'en_US'
 
 export const routeMeta = {
   '/': {
-    title: 'George Akai Tech Consulting | Software, AI & Cybersecurity',
+    title: 'Custom Software, AI Chatbots & Cybersecurity Consulting | George Akai Tech Consulting',
     description:
-      'Custom software and web development, AI chatbot integrations, and cybersecurity consulting for growing businesses. Based in California, remote-friendly.',
+      'Fixed-price custom software, AI chatbot integrations and cybersecurity for growing businesses. California-based, remote-friendly. Book a free strategy call.',
   },
   '/about': {
     title: 'About George Akai | Founder, George Akai Tech Consulting',
@@ -15,9 +15,17 @@ export const routeMeta = {
       'Meet George Akai: a cybersecurity analyst, software engineer, and AI solutions developer with hands-on experience in security operations and AWS.',
   },
   '/contact': {
-    title: 'Contact | Get a Quote from George Akai Tech Consulting',
+    title: 'Book a Free Strategy Call | George Akai Tech Consulting',
     description:
-      'Request a quote for web development, AI chatbot integration, or cybersecurity consulting. Fill out the form or reach out to George Akai directly.',
+      "Tell me what you need, whether that's custom software, an AI chatbot or a security review, and get a reply within one business day to schedule a free 30-minute call.",
+  },
+  '/privacy': {
+    title: 'Privacy Policy | George Akai Tech Consulting',
+    description: 'How George Akai Tech Consulting collects, uses and protects information submitted through this website.',
+  },
+  '/terms': {
+    title: 'Terms of Use | George Akai Tech Consulting',
+    description: 'Terms of use for the George Akai Tech Consulting website.',
   },
   '/beyond': {
     title: 'Beyond the Work | George Akai Tech Consulting',
