@@ -25,13 +25,16 @@ export const business = {
   founder: 'George Akai',
   founderTitle: 'Founder & Principal Consultant',
   keyCredential: 'BS Computer Information Systems and Cybersecurity',
-  entity: '[LLC / business entity]',
+  entity: 'Sole Proprietor',
   region: 'California',
   url: 'https://georgeakaitechconsulting.com',
   email: 'info@georgeakaitechconsulting.com',
-  phone: '[(XXX) XXX-XXXX]',
+  phone: '(530) 591-5143',
+  /** Same number in international format, used for tap-to-call links. */
+  phoneTel: '+15305915143',
   linkedin: 'https://www.linkedin.com/in/georgeakai/',
-  calendarUrl: '[CALENDLY/CAL.COM URL]',
+  /** Booking link (Calendly / Cal.com). Empty = no calendar button. */
+  calendarUrl: '',
   /** Formspree endpoint (existing form). Swap for a Resend route or other backend if needed. */
   formEndpoint: 'https://formspree.io/f/mjykojpl',
   /** Real photos under /public: 4:5 portrait (About) and a square graduation photo (hero card). */

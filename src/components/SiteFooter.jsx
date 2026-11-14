@@ -8,7 +8,7 @@ export default function SiteFooter() {
     <footer className="ga-footer">
       <div className="ga-container ga-footer-inner">
         <p>
-          © {year} {business.name} · <span className="ga-ph">{business.entity}</span> · {business.region}
+          © {year} {business.name} · {business.entity} · {business.region}
         </p>
         <nav aria-label="Footer">
           <ul>

@@ -53,7 +53,7 @@ export function ContactSection({ headingLevel = 2 }) {
             </li>
             <li>
               <Phone size={20} aria-hidden="true" />
-              {hasPhone ? <a href={`tel:${business.phone.replace(/[^\d+]/g, '')}`}>{business.phone}</a> : business.phone}
+              {hasPhone ? <a href={`tel:${business.phoneTel}`}>{business.phone}</a> : business.phone}
             </li>
             <li>
               <MapPin size={20} aria-hidden="true" />
@@ -61,15 +61,10 @@ export function ContactSection({ headingLevel = 2 }) {
             </li>
           </ul>
 
-          {hasCalendar ? (
+          {hasCalendar && (
             <a className="ga-btn ga-btn-secondary-dark" href={business.calendarUrl} target="_blank" rel="noreferrer">
               <CalendarDays size={18} aria-hidden="true" /> Prefer to pick a time? Open my calendar
             </a>
-          ) : (
-            <p className="ga-btn ga-btn-secondary-dark ga-btn-pending">
-              <CalendarDays size={18} aria-hidden="true" /> Prefer to pick a time? Open my calendar{' '}
-              <span className="ga-ph">{business.calendarUrl}</span>
-            </p>
           )}
         </div>
 

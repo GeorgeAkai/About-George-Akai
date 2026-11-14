@@ -58,7 +58,7 @@ export function Privacy() {
       </p>
       <h2>Contact</h2>
       <p>
-        {business.name} · <span className="ga-ph">{business.entity}</span> · {business.region} ·{' '}
+        {business.name} · {business.entity} · {business.region} ·{' '}
         <a href={`mailto:${business.email}`}>{business.email}</a>
       </p>
     </LegalPage>

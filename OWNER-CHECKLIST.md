@@ -9,9 +9,6 @@ To hide a block until it's ready, empty its array in `site.js`:
 
 ## Still to do
 
-- [ ] **Phone**: `business.phone` (becomes a tap-to-call link once filled)
-- [ ] **Business entity** (e.g. "George Akai Tech Consulting LLC"): `business.entity` (footer + privacy page)
-- [ ] **Calendar booking link** (Calendly / Cal.com): `business.calendarUrl` (becomes a button on the contact section and the form's success screen)
 - [ ] **Form endpoint / email destination**: `business.formEndpoint`: already set to your existing Formspree form; confirm it still delivers to the right inbox. If you switch providers, add its domain to `connect-src` and `form-action` in `vercel.json`.
 - [ ] **Privacy policy & terms**: review the starter text in `src/pages/Legal.jsx`, fill `[LAST UPDATED DATE]` and `[X years]` retention, and remove the "starter text" note.
 - [ ] **Confirm two items I wrote**: the Mid Valley case study's challenge and outcome lines, and the "<24 hr response time on support" stat (keep it only if you commit to it).
@@ -37,6 +34,8 @@ To hide a block until it's ready, empty its array in `site.js`:
 - [x] About: bio, education, certifications, experience (CSU Chico), tech stack
 - [x] FAQ: $1,000–$3,000, timelines, US and Kenya; 30 days of included support
 - [x] Starting prices for each service (from the pricing table)
+- [x] Phone (530) 591-5143 (tap-to-call) and business type: Sole Proprietor
+- [x] Calendar button removed. To bring it back later, set `business.calendarUrl` to your booking link.
 
 ## Already set (confirm they're right)
 

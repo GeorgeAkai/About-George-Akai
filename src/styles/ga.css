@@ -171,7 +171,6 @@ html { scroll-padding-top: 80px; }
 .ga-btn-secondary-light { border-color: var(--accent); color: var(--accent); background: transparent; }
 .ga-btn-secondary-light:hover { background: var(--accent-tint); color: var(--accent-hover); border-color: var(--accent-hover); }
 
-.ga-btn-pending { cursor: default; margin: 0; font-weight: 500; font-size: 15px; height: auto; padding-block: 12px; flex-wrap: wrap; }
 
 .ga-link-dark,
 .ga-link-light {
