@@ -166,8 +166,8 @@ export const services = {
 }
 
 /**
- * Recent work: real, live client sites. `image`: path under /public (16:9-ish
- * screenshot, .webp preferred) or null for a placeholder. `url` must be the live site.
+ * Recent work: real, live client sites. `screens` are phone screenshots
+ * (480×817 .webp under /public/portfolio); the first is shown in front.
  */
 export const portfolio = {
   title: 'Recent work',
@@ -175,26 +175,33 @@ export const portfolio = {
   items: [
     {
       name: 'Kenrish Collection',
-      url: 'https://kenrishcollection.com',
-      tag: 'E-commerce · Beauty & fashion retail',
+      url: 'https://www.kenrishcollection.com',
+      tag: 'E-commerce + back office · Beauty & fashion retail',
       summary:
-        'An online store and booking site for a beauty and fashion boutique, with an AI shopping assistant and a full admin back office.',
-      features: ['Product catalogue', 'Appointment booking', 'AI shopping assistant', 'Inventory & sales admin'],
-      image: '/portfolio/kenrish-assistant.webp',
-      imageAlt: 'Kenrish Collection product catalogue with the Kenrish Assistant AI chat answering a product question',
-      width: 1280,
-      height: 547,
+        'A two-brand online store for beauty and fashion, with a full back office the owner runs the business from.',
+      features: [
+        'Beauty & fashion storefronts',
+        'Product search & wishlist',
+        'Executive dashboard',
+        'Orders, invoices & expenses',
+        'Employee management',
+      ],
+      screens: [
+        { src: '/portfolio/kenrish-store.webp', alt: 'Kenrish Collection storefront: Our Collections with Beauty, Handbags and Clothing filters' },
+        { src: '/portfolio/kenrish-admin.webp', alt: 'Kenrish admin menu: Executive Dashboard, Customer & Order Management, Expenses, Employees, Invoices and Offers' },
+      ],
     },
     {
       name: 'Mid Valley Lath & Plaster',
-      url: 'https://midvalleylathandplaster.com',
-      tag: 'Business website · Lath & plaster contractor',
-      summary: '[One sentence on what the site does for the business, e.g. showcases projects and brings in quote requests.]',
-      features: ['[Feature 1]', '[Feature 2]', '[Feature 3]'],
-      image: null, // e.g. '/portfolio/midvalley-home.webp' (desktop screenshot ~1280×547)
-      imageAlt: 'Mid Valley Lath & Plaster website home page',
-      width: 1280,
-      height: 547,
+      url: 'https://midvalleylathandplaster.vercel.app',
+      tag: 'Lead-generation website · Lath, plaster & stucco contractor',
+      summary:
+        'A mobile-first site for a licensed California stucco contractor, built to turn visitors into calls and estimate requests.',
+      features: ['Tap-to-call & text bar', 'Free estimate request form', 'License & trust signals', 'Mobile-first design'],
+      screens: [
+        { src: '/portfolio/midvalley-home.webp', alt: 'Mid Valley Lath & Plaster home page: Stucco done right. Built to last, with call and free estimate buttons' },
+        { src: '/portfolio/midvalley-quote.webp', alt: 'Mid Valley estimate request form with name, phone, city, service and project details' },
+      ],
     },
   ],
 }

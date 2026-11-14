@@ -14,9 +14,9 @@ To hide a block until it's ready, empty its array in `site.js`:
 - [ ] **3–5 client logos** (with permission): `clientLogos` → `{ name: 'Acme', src: '/logos/acme.svg' }`
 - [ ] **Certifications / credentials** pills: `credentials`
 - [ ] **Verified numbers** for the 4 proof stats: `stats` (delete any you can't back up)
-- [ ] **Portfolio: Mid Valley Lath & Plaster** in `portfolio.items` (`site.js`): add a desktop screenshot
-      (save as `/public/portfolio/midvalley-home.webp`, about 1280×547, and set `image`), a one-sentence `summary`
-      and 3–4 `features`. Confirm both live URLs (`kenrishcollection.com`, `midvalleylathandplaster.com`) are correct.
+- [x] **Portfolio**: Kenrish Collection and Mid Valley Lath & Plaster are live in `portfolio.items` (`site.js`).
+      If you get a custom domain for Mid Valley, update its `url`. To add a project, drop two 480×817 phone
+      screenshots in `/public/portfolio/` and add an entry.
 - [ ] **3 case studies**: industry, title, challenge, solution, metric, screenshot: `caseStudies`
       (you already have screenshots in `/public`, e.g. `reservation engine.png`, `AI RAG chat assistant.png`, `sofelk.png`, if they match a real client story)
 - [ ] **2+ real testimonials** with name, title, company (with permission): `testimonials`

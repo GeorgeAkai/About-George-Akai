@@ -274,19 +274,13 @@ function Portfolio() {
         <div className="ga-grid-2 ga-portfolio">
           {portfolio.items.map((p) => (
             <article key={p.name} className="ga-project ga-reveal">
-              <a className="ga-project-shot" href={p.url} target="_blank" rel="noopener noreferrer" tabIndex={-1} aria-hidden="true">
-                <span className="ga-project-bar">
-                  <span />
-                  <span />
-                  <span />
-                  <em>{p.url.replace(/^https?:\/\//, '')}</em>
-                </span>
-                {p.image ? (
-                  <img src={p.image} alt="" width={p.width} height={p.height} loading="lazy" decoding="async" />
-                ) : (
-                  <ImageSlot label={`[SCREENSHOT: ${p.url.replace(/^https?:\/\//, '')}]`} className="ga-project-slot" />
-                )}
-              </a>
+              <div className="ga-project-stage">
+                {p.screens.map((sc, i) => (
+                  <figure key={sc.src} className={`ga-phone ga-phone-${i + 1}`}>
+                    <img src={sc.src} alt={sc.alt} width="480" height="817" loading="lazy" decoding="async" />
+                  </figure>
+                ))}
+              </div>
               <div className="ga-project-body">
                 <p className="ga-project-tag">{p.tag}</p>
                 <h3 className="ga-h3 ga-h3-lg">{p.name}</h3>
@@ -301,7 +295,8 @@ function Portfolio() {
                   ))}
                 </ul>
                 <a className="ga-project-link" href={p.url} target="_blank" rel="noopener noreferrer">
-                  Visit {p.name} <ArrowUpRight size={16} aria-hidden="true" />
+                  Visit live site<span className="ga-visually-hidden">: {p.name}</span>{' '}
+                  <ArrowUpRight size={16} aria-hidden="true" />
                   <span className="ga-visually-hidden"> (opens in a new tab)</span>
                 </a>
               </div>
