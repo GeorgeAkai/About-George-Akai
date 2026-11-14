@@ -125,6 +125,30 @@ function Hero() {
           </div>
         </aside>
       </div>
+
+      {portfolio.items.length > 0 && (
+        <div className="ga-container">
+          <nav className="ga-hero-work" aria-label="Recent work preview">
+            <p className="ga-hero-work-label">Recent work</p>
+            <ul>
+              {portfolio.items.map((p) => (
+                <li key={p.name}>
+                  <SectionLink hash="portfolio" className="ga-hero-work-item">
+                    <img src={p.screens[0].src} alt="" width="48" height="48" />
+                    <span>
+                      <span className="ga-hero-work-name">{p.name}</span>
+                      <span className="ga-hero-work-kind">{p.kind}</span>
+                    </span>
+                  </SectionLink>
+                </li>
+              ))}
+            </ul>
+            <SectionLink hash="portfolio" className="ga-hero-work-all">
+              See all work <ArrowRight size={16} aria-hidden="true" />
+            </SectionLink>
+          </nav>
+        </div>
+      )}
     </section>
   )
 }

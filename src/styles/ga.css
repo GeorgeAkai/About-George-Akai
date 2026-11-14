@@ -1073,3 +1073,65 @@ section[aria-labelledby='guarantees-title'] .ga-h2 { margin-bottom: 44px; }
 @media (prefers-reduced-motion: reduce) {
   .ga-phone, .ga-project { transition: none; }
 }
+
+/* ---------- Hero: recent work preview ---------- */
+.ga-hero-work {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--navy-line);
+}
+.ga-hero-work-label {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-dark-faint);
+}
+.ga-hero-work ul { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.ga-hero-work-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 8px 18px 8px 8px;
+  border: 1px solid var(--navy-line);
+  border-radius: 14px;
+  background: var(--navy-900);
+  text-decoration: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.ga-hero-work-item:hover { border-color: var(--navy-line-strong); background: var(--navy-850); }
+.ga-hero-work-item img {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: top center;
+}
+.ga-hero-work-name { display: block; font-size: 15px; font-weight: 600; color: #fff; line-height: 1.3; }
+.ga-hero-work-kind { display: block; font-size: 13px; color: var(--on-dark-muted); line-height: 1.3; }
+.ga-home a.ga-hero-work-all:not(.ga-btn) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-left: auto;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-on-dark);
+  text-decoration: none;
+}
+.ga-home a.ga-hero-work-all:not(.ga-btn):hover { color: #fff; }
+@media (max-width: 720px) {
+  .ga-hero-work { margin-top: 44px; padding-top: 24px; gap: 12px; }
+  .ga-hero-work-label { width: 100%; }
+  .ga-hero-work ul { flex-direction: column; width: 100%; }
+  .ga-hero-work-item { width: 100%; }
+  .ga-hero-work-all { margin-left: 0; }
+}

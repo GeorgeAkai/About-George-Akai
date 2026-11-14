@@ -175,6 +175,7 @@ export const portfolio = {
   items: [
     {
       name: 'Kenrish Collection',
+      kind: 'E-commerce & back office',
       url: 'https://www.kenrishcollection.com',
       tag: 'E-commerce + back office · Beauty & fashion retail',
       summary:
@@ -193,6 +194,7 @@ export const portfolio = {
     },
     {
       name: 'Mid Valley Lath & Plaster',
+      kind: 'Contractor lead-gen site',
       url: 'https://midvalleylathandplaster.vercel.app',
       tag: 'Lead-generation website · Lath, plaster & stucco contractor',
       summary:
