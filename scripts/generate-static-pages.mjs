@@ -33,9 +33,9 @@ function replaceHrefAttr(html, tagRegex, newValue) {
   return html.replace(tagRegex, (match) => match.replace(/href="[^"]*"/, `href="${escapeAttr(newValue)}"`))
 }
 
-// Preload the body (Inter 400) and heading (Space Grotesk 700) fonts.
+// Preload the body (Inter 400) and heading (Inter 700) fonts.
 const assets = readdirSync(resolve(distDir, 'assets'))
-const preloadFonts = [/^inter-latin-400-normal.*\.woff2$/, /^space-grotesk-latin-700-normal.*\.woff2$/]
+const preloadFonts = [/^inter-latin-400-normal.*\.woff2$/, /^inter-latin-700-normal.*\.woff2$/]
   .map((re) => assets.find((f) => re.test(f)))
   .filter(Boolean)
   .map((f) => `<link rel="preload" href="/assets/${f}" as="font" type="font/woff2" crossorigin />`)

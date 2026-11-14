@@ -164,16 +164,18 @@ function Stats() {
   if (!stats.length) return null
   return (
     <section className="ga-stats-wrap" aria-label="Track record">
-      <ul className="ga-container ga-stats">
-        {stats.map((s) => (
-          <li key={s.label} className="ga-stat">
-            <span className="ga-stat-value">
-              <T>{s.value}</T>
-            </span>
-            <span className="ga-stat-label">{s.label}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="ga-container">
+        <ul className="ga-stats">
+          {stats.map((s) => (
+            <li key={s.label} className="ga-stat">
+              <span className="ga-stat-value">
+                <T>{s.value}</T>
+              </span>
+              <span className="ga-stat-label">{s.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   )
 }
