@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  ArrowUpRight,
   Check,
   Code2,
   FileCheck,
@@ -21,6 +22,7 @@ import {
   guarantees,
   hero,
   isPlaceholder,
+  portfolio,
   problems,
   process,
   reviews,
@@ -79,7 +81,7 @@ function Hero() {
             <SectionLink hash="contact" className="ga-btn ga-btn-primary">
               {hero.primaryCta} <ArrowRight size={18} aria-hidden="true" />
             </SectionLink>
-            <SectionLink hash="work" className="ga-btn ga-btn-secondary-dark">
+            <SectionLink hash="portfolio" className="ga-btn ga-btn-secondary-dark">
               {hero.secondaryCta}
             </SectionLink>
           </div>
@@ -251,6 +253,60 @@ function Services() {
               </article>
             )
           })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Portfolio() {
+  if (!portfolio.items.length) return null
+  return (
+    <section id="portfolio" className="ga-section ga-gray" aria-labelledby="portfolio-title">
+      <div className="ga-container">
+        <header className="ga-head ga-reveal">
+          <p className="ga-eyebrow">Portfolio</p>
+          <h2 id="portfolio-title" className="ga-h2">
+            {portfolio.title}
+          </h2>
+          <p className="ga-lead">{portfolio.subtitle}</p>
+        </header>
+        <div className="ga-grid-2 ga-portfolio">
+          {portfolio.items.map((p) => (
+            <article key={p.name} className="ga-project ga-reveal">
+              <a className="ga-project-shot" href={p.url} target="_blank" rel="noopener noreferrer" tabIndex={-1} aria-hidden="true">
+                <span className="ga-project-bar">
+                  <span />
+                  <span />
+                  <span />
+                  <em>{p.url.replace(/^https?:\/\//, '')}</em>
+                </span>
+                {p.image ? (
+                  <img src={p.image} alt="" width={p.width} height={p.height} loading="lazy" decoding="async" />
+                ) : (
+                  <ImageSlot label={`[SCREENSHOT: ${p.url.replace(/^https?:\/\//, '')}]`} className="ga-project-slot" />
+                )}
+              </a>
+              <div className="ga-project-body">
+                <p className="ga-project-tag">{p.tag}</p>
+                <h3 className="ga-h3 ga-h3-lg">{p.name}</h3>
+                <p>
+                  <T>{p.summary}</T>
+                </p>
+                <ul className="ga-chips" aria-label="What was built">
+                  {p.features.map((f) => (
+                    <li key={f}>
+                      <T>{f}</T>
+                    </li>
+                  ))}
+                </ul>
+                <a className="ga-project-link" href={p.url} target="_blank" rel="noopener noreferrer">
+                  Visit {p.name} <ArrowUpRight size={16} aria-hidden="true" />
+                  <span className="ga-visually-hidden"> (opens in a new tab)</span>
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -492,6 +548,7 @@ export default function Home() {
       <Stats />
       <Problems />
       <Services />
+      <Portfolio />
       <Results />
       <Testimonials />
       <Process />

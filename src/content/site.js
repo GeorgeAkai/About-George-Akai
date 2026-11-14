@@ -42,7 +42,7 @@ export const business = {
 
 export const nav = [
   { label: 'Services', hash: 'services' },
-  { label: 'Results', hash: 'work' },
+  { label: 'Work', hash: 'portfolio' },
   { label: 'Process', hash: 'process' },
   { label: 'Pricing', hash: 'pricing' },
   { label: 'About', hash: 'about' },
@@ -55,7 +55,7 @@ export const hero = {
   subtitle:
     'I design and build custom software, AI assistants and security programs for small and mid-sized businesses — with fixed-scope pricing, weekly updates, and one senior consultant accountable from first call to launch.',
   primaryCta: 'Book a free 30-min strategy call',
-  secondaryCta: 'See client results',
+  secondaryCta: 'See recent work',
   checks: ['Based in California, remote-friendly', 'Reply within 1 business day', 'NDA available on request'],
   card: {
     eyebrow: 'Your free strategy call',
@@ -161,6 +161,40 @@ export const services = {
       price: '$250/mo',
       cta: 'Get a security review',
       formValue: 'Cybersecurity',
+    },
+  ],
+}
+
+/**
+ * Recent work: real, live client sites. `image`: path under /public (16:9-ish
+ * screenshot, .webp preferred) or null for a placeholder. `url` must be the live site.
+ */
+export const portfolio = {
+  title: 'Recent work',
+  subtitle: 'Live sites built for real businesses.',
+  items: [
+    {
+      name: 'Kenrish Collection',
+      url: 'https://kenrishcollection.com',
+      tag: 'E-commerce · Beauty & fashion retail',
+      summary:
+        'An online store and booking site for a beauty and fashion boutique, with an AI shopping assistant and a full admin back office.',
+      features: ['Product catalogue', 'Appointment booking', 'AI shopping assistant', 'Inventory & sales admin'],
+      image: '/portfolio/kenrish-assistant.webp',
+      imageAlt: 'Kenrish Collection product catalogue with the Kenrish Assistant AI chat answering a product question',
+      width: 1280,
+      height: 547,
+    },
+    {
+      name: 'Mid Valley Lath & Plaster',
+      url: 'https://midvalleylathandplaster.com',
+      tag: 'Business website · Lath & plaster contractor',
+      summary: '[One sentence on what the site does for the business, e.g. showcases projects and brings in quote requests.]',
+      features: ['[Feature 1]', '[Feature 2]', '[Feature 3]'],
+      image: null, // e.g. '/portfolio/midvalley-home.webp' (desktop screenshot ~1280×547)
+      imageAlt: 'Mid Valley Lath & Plaster website home page',
+      width: 1280,
+      height: 547,
     },
   ],
 }
