@@ -8,8 +8,21 @@ export default function SiteHeader() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
   const toggleRef = useRef(null)
+  const headerRef = useRef(null)
+  const close = () => setOpen(false)
 
-  useEffect(() => setOpen(false), [location.pathname, location.hash])
+  // Close on every navigation, including a repeat tap on the current section link.
+  useEffect(() => setOpen(false), [location.pathname, location.hash, location.key])
+
+  // Close when tapping or clicking anywhere outside the header.
+  useEffect(() => {
+    if (!open) return
+    const onPointerDown = (e) => {
+      if (!headerRef.current?.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => document.removeEventListener('pointerdown', onPointerDown)
+  }, [open])
 
   useEffect(() => {
     if (!open) return
@@ -24,9 +37,9 @@ export default function SiteHeader() {
   }, [open])
 
   return (
-    <header className={`ga-header${open ? ' is-open' : ''}`}>
+    <header ref={headerRef} className={`ga-header${open ? ' is-open' : ''}`}>
       <div className="ga-container ga-header-inner">
-        <Link to="/" className="ga-logo">
+        <Link to="/" className="ga-logo" onClick={close}>
           <span className="ga-logo-mark" aria-hidden="true">
             GA
           </span>
@@ -39,7 +52,7 @@ export default function SiteHeader() {
           <ul>
             {nav.map((item) => (
               <li key={item.hash}>
-                <SectionLink hash={item.hash} className="ga-nav-link">
+                <SectionLink hash={item.hash} className="ga-nav-link" onClick={close}>
                   {item.label}
                 </SectionLink>
               </li>
@@ -48,7 +61,7 @@ export default function SiteHeader() {
         </nav>
 
         <div className="ga-header-cta">
-          <SectionLink hash="contact" className="ga-btn ga-btn-primary ga-btn-nav">
+          <SectionLink hash="contact" className="ga-btn ga-btn-primary ga-btn-nav" onClick={close}>
             <span className="ga-cta-long">Book a free consult</span>
             <span className="ga-cta-short">Free consult</span>
           </SectionLink>
