@@ -3,21 +3,15 @@
   <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CEBTN1X20"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-5CEBTN1X20');
-    </script>
+    <script src="/ga-init.js"></script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>George Akai Tech Consulting | Software, AI & Cybersecurity</title>
+    <title>Custom Software, AI Chatbots &amp; Cybersecurity Consulting | George Akai Tech Consulting</title>
     <meta
       name="description"
-      content="Custom software and web development, AI chatbot integrations, and cybersecurity consulting for growing businesses. Based in California, remote-friendly."
+      content="Fixed-price custom software, AI chatbots and cybersecurity for growing businesses. Based in California, working with clients anywhere. Book a free 30-minute call."
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="George Akai" />
@@ -27,15 +21,15 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#050811" />
+    <meta name="theme-color" content="#0a1628" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="George Akai Tech Consulting" />
-    <meta property="og:title" content="George Akai Tech Consulting | Software, AI & Cybersecurity" />
+    <meta property="og:title" content="Custom Software, AI Chatbots &amp; Cybersecurity Consulting | George Akai Tech Consulting" />
     <meta
       property="og:description"
-      content="Custom software and web development, AI chatbot integrations, and cybersecurity consulting for growing businesses. Based in California, remote-friendly."
+      content="Fixed-price custom software, AI chatbots and cybersecurity for growing businesses. Based in California, working with clients anywhere. Book a free 30-minute call."
     />
     <meta property="og:url" content="https://georgeakaitechconsulting.com/" />
     <meta property="og:locale" content="en_US" />
@@ -46,19 +40,13 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="George Akai Tech Consulting | Software, AI & Cybersecurity" />
+    <meta name="twitter:title" content="Custom Software, AI Chatbots &amp; Cybersecurity Consulting | George Akai Tech Consulting" />
     <meta
       name="twitter:description"
-      content="Custom software and web development, AI chatbot integrations, and cybersecurity consulting for growing businesses. Based in California, remote-friendly."
+      content="Fixed-price custom software, AI chatbots and cybersecurity for growing businesses. Based in California, working with clients anywhere. Book a free 30-minute call."
     />
     <meta name="twitter:image" content="https://georgeakaitechconsulting.com/og-image.png" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <!-- FONT_PRELOADS -->
 
     <script type="application/ld+json">
       {
@@ -68,9 +56,10 @@
         "url": "https://georgeakaitechconsulting.com/",
         "logo": "https://georgeakaitechconsulting.com/icon-512.png",
         "image": "https://georgeakaitechconsulting.com/og-image.png",
-        "description": "Software and web development, AI chatbot integrations, and cybersecurity consulting and engineering for growing businesses.",
+        "description": "Fixed-price custom software, AI chatbot integrations and cybersecurity consulting for small and mid-sized businesses. California-based, remote-friendly.",
         "email": "info@georgeakaitechconsulting.com",
-        "areaServed": "US",
+        "telephone": "+1-530-591-5143",
+        "areaServed": [{ "@type": "Country", "name": "United States" }, { "@type": "State", "name": "California" }],
         "address": {
           "@type": "PostalAddress",
           "addressRegion": "CA",
@@ -91,24 +80,24 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Software & Web Development",
-              "description": "Custom websites, web applications, dashboards, and API integrations."
+              "name": "Custom Software & Web Development",
+              "description": "Websites, customer portals, business tools, automated tasks and apps that share information."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "AI Chatbot Integration",
-              "description": "Custom RAG-based chatbots and AI assistants integrated into websites and internal tools."
+              "name": "AI Chatbot Integrations",
+              "description": "AI assistants trained on your own documents for websites, support and internal knowledge."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Cybersecurity Consulting & Engineering",
-              "description": "Vulnerability management, security monitoring, cloud security, and risk assessments."
+              "name": "Cybersecurity Consulting",
+              "description": "Security check-ups, stronger logins and backups, a plan for what to do if you get hacked, and staff training."
             }
           }
         ]
@@ -116,7 +105,7 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
