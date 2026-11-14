@@ -12,9 +12,9 @@ const RATE_KEY = 'ga-form-submits'
 function validate(values) {
   const errors = {}
   if (!values.name.trim()) errors.name = 'Please enter your name.'
-  if (!values.email.trim()) errors.email = 'Please enter your work email.'
+  if (!values.email.trim()) errors.email = 'Please enter your email.'
   else if (!EMAIL_RE.test(values.email.trim())) errors.email = 'Please enter a valid email, like jane@company.com.'
-  if (values.message.trim().length < 10) errors.message = 'Please add a sentence or two about the challenge.'
+  if (values.message.trim().length < 10) errors.message = 'Please add a sentence or two about what you need.'
   return errors
 }
 
@@ -94,7 +94,7 @@ export default function ContactForm() {
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...values,
-          _subject: `New strategy call request from ${values.name}`,
+          _subject: `New free call request from ${values.name}`,
         }),
       })
       if (!res.ok) throw new Error(`Form endpoint returned ${res.status}`)
@@ -150,7 +150,7 @@ export default function ContactForm() {
   const submitting = status === 'submitting'
 
   return (
-    <form className="ga-form-card" ref={formRef} onSubmit={onSubmit} noValidate aria-label="Request a free strategy call">
+    <form className="ga-form-card" ref={formRef} onSubmit={onSubmit} noValidate aria-label="Request a free 30-minute call">
       <div className="ga-form-grid">
         <div className="ga-field">
           <label htmlFor="cf-name">
@@ -161,7 +161,7 @@ export default function ContactForm() {
         </div>
         <div className="ga-field">
           <label htmlFor="cf-email">
-            Work email <span aria-hidden="true">*</span>
+            Email <span aria-hidden="true">*</span>
           </label>
           <input {...fieldProps('email')} type="email" autoComplete="email" inputMode="email" required />
           <ErrorText name="email" />
@@ -194,7 +194,7 @@ export default function ContactForm() {
         </div>
         <div className="ga-field ga-field-full">
           <label htmlFor="cf-message">
-            Briefly, what's the challenge? <span aria-hidden="true">*</span>
+            In a few words, what do you need help with? <span aria-hidden="true">*</span>
           </label>
           <textarea {...fieldProps('message')} rows={5} required />
           <ErrorText name="message" />

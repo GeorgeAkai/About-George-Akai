@@ -7,7 +7,7 @@ export const routeMeta = {
   '/': {
     title: 'Custom Software, AI Chatbots & Cybersecurity Consulting | George Akai Tech Consulting',
     description:
-      'Fixed-price custom software, AI chatbot integrations and cybersecurity for growing businesses. California-based, remote-friendly. Book a free strategy call.',
+      'Fixed-price custom software, AI chatbots and cybersecurity for growing businesses. Based in California, working with clients anywhere. Book a free 30-minute call.',
   },
   '/about': {
     title: 'About George Akai | Founder, George Akai Tech Consulting',

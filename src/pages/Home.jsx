@@ -354,11 +354,11 @@ function Results() {
           <div>
             <p className="ga-eyebrow">Client results</p>
             <h2 id="work-title" className="ga-h2">
-              Real problems, measurable outcomes
+              Real problems, real results
             </h2>
           </div>
           <SectionLink hash="contact" className="ga-link-dark">
-            Discuss a similar project <ArrowRight size={16} aria-hidden="true" />
+            Talk about a similar project <ArrowRight size={16} aria-hidden="true" />
           </SectionLink>
         </header>
         <div className={caseStudies.length === 2 ? 'ga-grid-2' : 'ga-grid-3'}>
@@ -379,10 +379,10 @@ function Results() {
                   <T>{c.title}</T>
                 </h3>
                 <p className="ga-case-text">
-                  <strong>Challenge:</strong> <T>{c.challenge}</T>
+                  <strong>The problem:</strong> <T>{c.challenge}</T>
                 </p>
                 <p className="ga-case-text">
-                  <strong>Solution:</strong> <T>{c.solution}</T>
+                  <strong>What I built:</strong> <T>{c.solution}</T>
                 </p>
                 <p className="ga-case-metric">
                   <T>{c.metric}</T>
@@ -557,7 +557,7 @@ function Faq() {
         <header className="ga-head ga-center ga-reveal">
           <p className="ga-eyebrow">FAQ</p>
           <h2 id="faq-title" className="ga-h2">
-            Questions, answered
+            Common questions
           </h2>
         </header>
         <div className="ga-faq-list">

@@ -57,17 +57,17 @@ export const hero = {
   pill: 'Software · AI · Cybersecurity for growing businesses',
   title: 'Secure, custom technology that helps your business grow.',
   subtitle:
-    'I design and build custom software, AI assistants and security programs for small and mid-sized businesses, with fixed-scope pricing, weekly updates, and one senior consultant accountable from first call to launch.',
-  primaryCta: 'Book a free 30-min strategy call',
+    'I build custom software, AI assistants and security protection for small and mid-sized businesses. You get a fixed price, weekly updates, and one experienced expert responsible from the first call to launch.',
+  primaryCta: 'Book a free 30-minute call',
   secondaryCta: 'See recent work',
-  checks: ['Based in California, remote-friendly', 'Reply within 1 business day', 'NDA available on request'],
+  checks: ['Based in California, working with clients anywhere', 'Replies within 1 business day', 'Happy to sign a confidentiality agreement'],
   card: {
-    eyebrow: 'Your free strategy call',
+    eyebrow: 'Your free 30-minute call',
     title: "Leave with a clear plan, even if you don't hire me.",
     steps: [
-      'We review your goals, current systems and biggest risks.',
-      'I outline the right approach: build, buy, or fix what you have.',
-      'You get a written summary with a ballpark budget and timeline within 48 hours.',
+      'We look at your goals, the tools you use today and your biggest risks.',
+      'I recommend the best option: build something new, buy a ready-made tool, or fix what you have.',
+      'Within 48 hours, you get a written summary with an estimated cost and timeline.',
     ],
   },
 }
@@ -87,26 +87,26 @@ export const credentials = [
 /** Only keep stats you can verify. */
 export const stats = [
   { value: '5+', label: 'Projects delivered' },
-  { value: '1 yr', label: 'Building production software' },
+  { value: '1 yr', label: 'Building software for real businesses' },
   { value: '90%', label: 'Clients who return or refer' },
-  { value: '<24 hr', label: 'Response time on support' },
+  { value: '<24 hr', label: 'Reply time on support requests' },
 ]
 
 export const problems = {
-  eyebrow: 'Sound familiar?',
-  title: 'Your business has outgrown spreadsheets, off-the-shelf tools and "a friend who does IT."',
+  eyebrow: 'Does this sound like you?',
+  title: 'Your business has outgrown spreadsheets, basic apps and "a friend who does IT."',
   items: [
     {
-      title: 'Manual work eats your week',
-      text: 'Your team copies data between tools, chases approvals by email and answers the same customer questions all day.',
+      title: 'Manual work takes up your week',
+      text: 'Your team copies information from one app to another, follows up on approvals by email and answers the same customer questions all day.',
     },
     {
       title: 'Past developers disappeared',
-      text: "You've paid for projects that ran late, went over budget, or left you with code nobody can maintain.",
+      text: "You've paid for projects that ran late, cost more than planned, or left you with a system nobody knows how to fix.",
     },
     {
-      title: 'Security is a guess',
-      text: "You're not sure who has access to what, whether backups work, or what you'd do after a breach or ransomware attack.",
+      title: "You're not sure you're secure",
+      text: "You don't know who can access what, whether your backups work, or what you'd do if you were hacked or your files were locked for ransom.",
     },
   ],
 }
@@ -114,36 +114,36 @@ export const problems = {
 export const services = {
   title: 'Three ways I help businesses run better and safer',
   subtitle:
-    'Every engagement starts with a fixed-scope proposal, so you know the price, timeline and deliverables before any work begins.',
+    "Every project starts with a written plan and a fixed price, so you know the cost, the timeline and exactly what you'll get before any work begins.",
   items: [
     {
       icon: 'code',
       title: 'Custom Software & Web Development',
-      text: 'Websites, client portals, internal tools and integrations built around how your business actually works.',
+      text: 'Websites, customer portals and business tools built around the way your business actually works.',
       bullets: [
-        'Fast, SEO-ready business websites',
+        'Fast websites that show up on Google',
         'Customer portals and dashboards',
-        'Workflow automation and API integrations',
+        'Automated tasks and apps that share information',
         'You own 100% of the code',
       ],
       pricePrefix: 'Projects from',
       price: '$1,500',
-      cta: 'Discuss a build',
+      cta: 'Talk about your project',
       formValue: 'Custom software / website',
     },
     {
       icon: 'chat',
-      title: 'AI Chatbot Integrations',
-      text: 'AI assistants trained on your own documents that answer customers, qualify leads and support your staff around the clock.',
+      title: 'AI Chatbots & Assistants',
+      text: 'AI assistants that learn from your own documents. They answer customer questions, collect details from people interested in buying, and help your staff, day and night.',
       bullets: [
-        'Website and support chatbots',
-        'Internal knowledge assistants',
-        'CRM, calendar and helpdesk hand-off',
-        'Privacy-safe: your data stays yours',
+        'Chatbots for your website and customer support',
+        "Assistants that answer your staff's questions",
+        'Connects to your calendar, customer list and support tools',
+        'Private: your data stays yours',
       ],
       pricePrefix: 'Setups from',
       price: '$1,200',
-      cta: 'Explore an AI assistant',
+      cta: 'Ask about an AI assistant',
       formValue: 'AI chatbot',
       featured: true,
       badge: 'Most requested',
@@ -151,16 +151,16 @@ export const services = {
     {
       icon: 'shield',
       title: 'Cybersecurity Consulting',
-      text: 'Find and fix the gaps before attackers do, and meet the security questions your customers and insurers ask.',
+      text: 'Find and fix weak spots before hackers do, and answer the security questions your customers and insurance company ask.',
       bullets: [
-        'Security assessments with a prioritized fix list',
-        'Access, MFA, backup and email hardening',
-        'Incident response planning',
-        'Staff security awareness training',
+        'A security check-up with a clear list of what to fix first',
+        'Stronger logins, two-step sign-in, backups and email security',
+        'A plan for what to do if you get hacked',
+        'Training so your staff can spot scams',
       ],
       pricePrefix: 'Plans from',
       price: '$250/mo',
-      cta: 'Get a security review',
+      cta: 'Get a security check-up',
       formValue: 'Cybersecurity',
     },
   ],
@@ -172,21 +172,21 @@ export const services = {
  */
 export const portfolio = {
   title: 'Recent work',
-  subtitle: 'Live sites built for real businesses.',
+  subtitle: 'Websites I built for real businesses, live today.',
   items: [
     {
       name: 'Kenrish Collection',
-      kind: 'E-commerce & back office',
+      kind: 'Online store & business dashboard',
       url: 'https://www.kenrishcollection.com',
-      tag: 'E-commerce + back office · Beauty & fashion retail',
+      tag: 'Online store + business dashboard · Beauty & fashion',
       summary:
-        'A two-brand online store for beauty and fashion, with a full back office the owner runs the business from.',
+        'An online store for two brands, beauty and fashion, plus a private dashboard the owner uses to run the whole business.',
       features: [
-        'Beauty & fashion storefronts',
+        'Beauty & fashion online stores',
         'Product search & wishlist',
-        'Executive dashboard',
+        'Business overview dashboard',
         'Orders, invoices & expenses',
-        'Employee management',
+        'Staff management',
       ],
       screens: [
         { src: '/portfolio/kenrish-store.webp', alt: 'Kenrish Collection storefront: Our Collections with Beauty, Handbags and Clothing filters' },
@@ -195,12 +195,12 @@ export const portfolio = {
     },
     {
       name: 'Mid Valley Lath & Plaster',
-      kind: 'Contractor lead-gen site',
+      kind: 'Contractor website',
       url: 'https://midvalleylathandplaster.vercel.app',
-      tag: 'Lead-generation website · Lath, plaster & stucco contractor',
+      tag: 'Website that brings in customers · Lath, plaster & stucco contractor',
       summary:
-        'A mobile-first site for a licensed California stucco contractor, built to turn visitors into calls and estimate requests.',
-      features: ['Tap-to-call & text bar', 'Free estimate request form', 'License & trust signals', 'Mobile-first design'],
+        'A phone-friendly website for a licensed California stucco contractor, built to get visitors to call or ask for a free estimate.',
+      features: ['One-tap call & text buttons', 'Free estimate request form', 'License & experience shown up front', 'Designed for phones first'],
       screens: [
         { src: '/portfolio/midvalley-home.webp', alt: 'Mid Valley Lath & Plaster home page: Stucco done right. Built to last, with call and free estimate buttons' },
         { src: '/portfolio/midvalley-quote.webp', alt: 'Mid Valley estimate request form with name, phone, city, service and project details' },
@@ -215,22 +215,22 @@ export const portfolio = {
  */
 export const caseStudies = [
   {
-    tag: 'Custom software · Beauty & fashion retail',
+    tag: 'Custom software · Beauty & fashion',
     title: 'Kenrish Collection moved from paper admin to one modern dashboard',
-    challenge: 'Accounting, inventory, HR and customer records were all managed by hand.',
+    challenge: 'Accounting, inventory, staff records and customer records were all managed by hand.',
     solution:
-      'A custom dashboard that brings accounting, inventory, HR and customer relationship management together and automates the manual tasks.',
+      'One custom dashboard that brings accounting, inventory, staff and customer records together and does the repetitive tasks automatically.',
     metric: 'Hours saved, no more guesswork',
     image: '/portfolio/kenrish-admin.webp',
     imageAlt: 'Kenrish admin menu with Executive Dashboard, Customer & Order Management, Expenses, Employees and Invoices',
   },
   {
-    tag: 'Lead-generation website · Stucco contractor',
-    title: 'Mid Valley Lath & Plaster turned its website into a lead source',
+    tag: 'Website · Stucco contractor',
+    title: 'Mid Valley Lath & Plaster now gets customers from its website',
     challenge: 'Homeowners needed a fast way to reach a licensed stucco contractor from their phones.',
     solution:
-      'A mobile-first site with tap-to-call, text and a free-estimate request form, backed by license and experience details.',
-    metric: 'Calls and estimate requests in one tap',
+      'A phone-friendly website with one-tap call and text buttons, a free estimate form, and their license and experience shown up front.',
+    metric: 'Customers can call or ask for an estimate in one tap',
     image: '/portfolio/midvalley-home.webp',
     imageAlt: 'Mid Valley Lath & Plaster home page with call and free estimate buttons',
   },
@@ -258,52 +258,52 @@ export const process = {
   title: 'A clear process with no surprises',
   steps: [
     {
-      when: 'Week 0',
-      title: 'Free strategy call',
-      text: '30 minutes to understand your goals, systems and constraints.',
+      when: 'Start',
+      title: 'Free 30-minute call',
+      text: 'We talk about your goals, the tools you use and any limits, like budget or deadlines.',
     },
     {
       when: 'Week 1',
-      title: 'Fixed-scope proposal',
-      text: 'A written plan with deliverables, timeline and a fixed price. No hourly surprises.',
+      title: 'Written plan and fixed price',
+      text: "A written plan showing what you'll get, when, and a fixed price. No surprise hourly bills.",
     },
     {
-      when: 'Build',
-      title: 'Build with weekly demos',
-      text: 'You see working progress every week and can steer before anything is final.',
+      when: 'During the build',
+      title: 'A demo every week',
+      text: 'Every week you see what is working so far and can ask for changes before anything is final.',
     },
     {
       when: 'Launch',
       title: 'Launch & support',
-      text: `Handover, documentation, training, and ${business.supportDays} days of included support.`,
+      text: `I hand everything over with written instructions and training, plus ${business.supportDays} days of free support.`,
     },
   ],
 }
 
 export const about = {
-  title: 'You work directly with me, not a junior team or an offshore handoff.',
+  title: 'You work directly with me, not a junior team or an outsourced company.',
   paragraphs: [
     "I'm George Akai, founder of George Akai Tech Consulting. I hold a BS in Computer Information Systems and Cybersecurity and worked as an Information Security Analyst Assistant at CSU Chico. I started this firm to give growing businesses the kind of secure, well-built technology usually reserved for large companies.",
-    "My focus is simple: build technology that's secure by default, easy for your team to use, and documented well enough that you're never locked in.",
+    "My focus is simple: build technology that is secure from the start, easy for your team to use, and comes with clear written instructions, so you're never stuck depending on me.",
   ],
   credentials: [
     { label: 'Education', value: 'BS, Computer Information Systems & Cybersecurity' },
     { label: 'Certifications', value: 'CompTIA Security+ · Google Cybersecurity · AWS Building Generative AI Solutions' },
     { label: 'Experience', value: 'Information Security Analyst Assistant, CSU Chico' },
-    { label: 'Tech stack', value: 'React, Python, Node.js, C++' },
+    { label: 'Tools I build with', value: 'React, Python, Node.js, C++' },
   ],
 }
 
 export const guarantees = {
-  title: 'Low-risk by design',
+  title: 'Working with me is low-risk',
   items: [
     { icon: 'quote', title: 'Fixed, written quotes', text: 'The price you approve is the price you pay.' },
-    { icon: 'key', title: 'You own everything', text: 'Code, accounts and documentation are handed over in full.' },
-    { icon: 'lock', title: 'Confidential', text: 'NDAs welcome. Your data is handled with least-privilege access.' },
+    { icon: 'key', title: 'You own everything', text: 'You get all the code, accounts and written instructions.' },
+    { icon: 'lock', title: 'Confidential', text: 'Happy to sign a confidentiality agreement (NDA). I only access the data I need.' },
     {
       icon: 'support',
       title: 'Included support',
-      text: `${business.supportDays} days of bug fixes after launch at no charge.`,
+      text: `${business.supportDays} days of free fixes after launch.`,
     },
   ],
 }
@@ -311,23 +311,23 @@ export const guarantees = {
 export const faqs = [
   {
     q: 'How much does a typical project cost?',
-    a: "Most projects fall between $1,000 and $3,000 depending on scope. After our free call you'll get a fixed quote, never an open-ended hourly bill.",
+    a: "Most projects cost between $1,000 and $3,000, depending on what you need. After our free call you'll get a fixed price, never an open-ended hourly bill.",
   },
   {
     q: 'How long does it take?',
-    a: 'Websites and chatbots usually launch in 2–6 weeks; custom software in 6–12 weeks. Security assessments take about 1–2 weeks.',
+    a: 'Websites and chatbots usually launch in 2–6 weeks; custom software in 6–12 weeks. Security check-ups take about 1–2 weeks.',
   },
   {
     q: 'Do you work with businesses outside California?',
-    a: "Yes. I'm based in California and work remotely with clients across the US and Kenya, with on-site visits available locally.",
+    a: "Yes. I'm based in California and work online with clients across the US and Kenya. I can also visit in person if you're nearby.",
   },
   {
     q: 'What happens after launch?',
-    a: `Every project includes ${business.supportDays} days of support. After that you can choose an optional monthly care plan or take everything in-house with full documentation.`,
+    a: `Every project includes ${business.supportDays} days of support. After that, you can choose an optional monthly support plan or manage everything yourself using the written instructions I provide.`,
   },
   {
     q: 'Is my business data safe with an AI chatbot?',
-    a: "Yes. I configure assistants so your data isn't used to train public models, limit what the bot can access, and document exactly where data is stored.",
+    a: "Yes. I set up assistants so your data isn't used to train public AI tools, limit what the chatbot can see, and write down exactly where your data is stored.",
   },
 ]
 
@@ -335,10 +335,10 @@ export const contact = {
   eyebrow: "Let's talk",
   title: "Tell me what you're trying to solve.",
   subtitle:
-    "Send a few details and I'll reply within one business day to schedule your free 30-minute strategy call. No pressure, no obligation.",
+    "Send a few details and I'll reply within one business day to set up your free 30-minute call. No pressure, no obligation.",
   serviceOptions: ['Custom software / website', 'AI chatbot', 'Cybersecurity', 'Not sure yet'],
   budgetOptions: ['Under $5k', '$5k–$15k', '$15k–$50k', '$50k+'],
-  submit: 'Request my free strategy call',
+  submit: 'Request my free call',
   microcopy: 'Your information is kept confidential and never shared. Reply within 1 business day.',
   success: "Thanks! I'll be in touch within one business day.",
 }
@@ -351,7 +351,7 @@ export const pricing = {
   eyebrow: 'Pricing',
   title: 'Clear prices, before any work starts.',
   subtitle:
-    'Most work is fixed-price, so you know the cost upfront. These are starting points. After a free discovery call, you get a written scope and an exact quote.',
+    'Most work has a fixed price, so you know the cost upfront. These are starting prices. After a free call, you get a written plan and an exact price.',
   badge: 'Most popular',
   cta: 'Get a quote',
   tabs: [
@@ -363,10 +363,10 @@ export const pricing = {
       plans: [
         {
           name: 'Starter Site',
-          for: 'For new or small businesses that need a professional presence.',
+          for: 'For new or small businesses that need a professional website.',
           amount: '$1,500',
           note: 'One-time',
-          features: ['Up to 5 pages, mobile-first', 'Contact form', 'Google Business Profile setup', 'Security basics built in'],
+          features: ['Up to 5 pages, built for phones first', 'Contact form', 'Google Business Profile setup (your listing on Google Maps)', 'Basic security built in'],
         },
         {
           name: 'Business Site',
@@ -374,26 +374,26 @@ export const pricing = {
           amount: '$3,500',
           note: 'One-time',
           featured: true,
-          features: ['Up to 12 pages', 'Online booking or ordering', 'Basic SEO and review integration', 'Analytics setup'],
+          features: ['Up to 12 pages', 'Online booking or ordering', 'Help showing up on Google, plus your customer reviews', 'Visitor statistics set up'],
         },
         {
           name: 'Web Apps & Automation',
-          for: 'Dashboards, internal tools, APIs and integrations.',
+          for: 'Dashboards, business tools and apps that share information.',
           from: true,
           amount: '$2,500',
-          note: 'Scoped per project',
+          note: 'Price depends on the project',
           features: [
             'Custom web applications',
-            'API design and integrations',
-            'Workflow and spreadsheet automation',
+            'Connecting your apps so they share information',
+            'Automating repetitive tasks and spreadsheets',
             'Online stores from $5,500',
           ],
         },
       ],
-      extrasTitle: 'Monthly care plans',
+      extrasTitle: 'Monthly website care',
       extras: [
-        { label: 'Care: hosting, security updates, backups, 30 min of edits', price: '$75/mo' },
-        { label: 'Growth: Care + 2 hrs of edits and a monthly report', price: '$200/mo' },
+        { label: 'Care: hosting, security updates, backups and 30 minutes of changes', price: '$75/mo' },
+        { label: 'Growth: everything in Care, plus 2 hours of changes and a monthly report', price: '$200/mo' },
       ],
     },
     {
@@ -404,44 +404,44 @@ export const pricing = {
       plans: [
         {
           name: 'Website Chat Assistant',
-          for: 'An assistant trained on your business that answers customers 24/7.',
+          for: 'A chatbot trained on your business that answers customers day and night.',
           amount: '$1,200',
           unit: 'setup',
           note: '+ $150/mo',
           featured: true,
           features: [
-            'Trained on your documents and FAQs',
-            'Captures leads and quote requests',
+            'Learns from your documents and FAQs',
+            'Collects contact details and quote requests',
             'Books appointments',
-            'Monthly tuning and monitoring',
+            'Monthly improvements and checks',
           ],
         },
         {
           name: 'AI Phone & Text Answering',
-          for: 'Never miss a call. Answers, books and texts back.',
+          for: 'Never miss a call. It answers, books appointments and texts back.',
           amount: '$1,500',
           unit: 'setup',
-          note: '+ $250/mo (call usage at cost)',
+          note: '+ $250/mo (plus phone call costs)',
           features: ['Answers missed and after-hours calls', 'Books appointments', 'Text follow-ups', 'Call summaries sent to you'],
         },
         {
           name: 'Custom AI & Internal Assistants',
-          for: 'RAG knowledge assistants and agentic workflow automation.',
+          for: "AI that answers your staff's questions from company documents and handles multi-step tasks.",
           from: true,
           amount: '$2,500',
-          note: 'Scoped per project',
+          note: 'Price depends on the project',
           features: [
-            'Internal knowledge assistants',
-            'Workflow and agentic automation',
-            'Integrations with your tools',
-            'Security reviewed before launch',
+            'Answers staff questions from your documents',
+            'Automates multi-step tasks',
+            'Connects with the tools you already use',
+            'Security checked before launch',
           ],
         },
       ],
       extrasTitle: 'Training',
       extras: [
         {
-          label: 'AI at Work team workshop: safe AI use, hands-on setup and a written AI policy (up to 10 people)',
+          label: 'AI at Work team workshop: how to use AI safely, hands-on setup and written AI rules for your team (up to 10 people)',
           price: '$750 / half day',
         },
       ],
@@ -454,51 +454,51 @@ export const pricing = {
       plans: [
         {
           name: 'Watch',
-          for: 'For tiny offices of up to 5 people.',
+          for: 'For small offices of up to 5 people.',
           amount: '$250',
-          unit: '/mo flat',
+          unit: '/month',
           note: '3-month minimum',
-          features: ['Quarterly security review', 'Monthly phishing simulation', 'Email support', 'Annual policy update'],
+          features: ['Security review every 3 months', 'Monthly practice scam emails to train your staff', 'Email support', 'Yearly update of your security rules'],
         },
         {
           name: 'Protect',
-          for: 'Managed protection for most small businesses.',
+          for: 'Ongoing protection for most small businesses.',
           amount: '$75',
-          unit: '/user/mo',
+          unit: '/person/month',
           note: '$375/mo minimum',
           featured: true,
-          features: ['Everything in Watch', 'Managed endpoint protection', 'Backup and account monitoring', 'Patch oversight'],
+          features: ['Everything in Watch', 'Virus and threat protection on every computer', 'Backup and account monitoring', 'Making sure software updates get installed'],
         },
         {
           name: 'Shield',
-          for: 'For regulated offices: medical, dental, legal, CPA.',
+          for: 'For offices with strict rules: medical, dental, legal and accounting.',
           amount: '$125',
-          unit: '/user/mo',
+          unit: '/person/month',
           note: '$750/mo minimum',
           features: [
             'Everything in Protect',
-            'Annual compliance assessment',
-            'Incident response on call',
-            'Quarterly strategy meeting',
+            'Yearly check that you meet industry rules',
+            'Help right away if you get hacked',
+            'Planning meeting every 3 months',
           ],
         },
       ],
-      extrasTitle: 'One-time assessments',
+      extrasTitle: 'One-time security check-ups',
       extras: [
-        { label: 'Security Essentials Assessment (1–10 users)', price: '$1,500' },
-        { label: 'HIPAA Security Risk Assessment', price: '$2,500' },
-        { label: 'IRS WISP Package (CPAs, tax preparers)', price: '$1,800' },
-        { label: 'Law Firm Security Package', price: '$2,500' },
-        { label: 'Cyber Insurance Questionnaire Help', price: '$350' },
-        { label: 'Staff phishing training (up to 15 people)', price: '$400' },
+        { label: 'Basic security check-up (1–10 people)', price: '$1,500' },
+        { label: 'HIPAA security check for medical and dental offices', price: '$2,500' },
+        { label: 'IRS-required written security plan (WISP) for tax preparers and CPAs', price: '$1,800' },
+        { label: 'Security package for law firms', price: '$2,500' },
+        { label: 'Help filling out cyber insurance forms', price: '$350' },
+        { label: 'Staff training on spotting scam emails (up to 15 people)', price: '$400' },
       ],
     },
   ],
   notes: [
-    { title: 'Free discovery call', text: '30 minutes to talk through what you need. No pressure, no jargon.' },
-    { title: 'Hourly work', text: '$125/hr for work outside a package. $200/hr after hours or emergencies.' },
-    { title: 'Simple terms', text: '50% deposit to start projects, 50% on delivery. Monthly plans billed in advance.' },
-    { title: 'Discounts', text: '10% off when you combine a security plan and a care plan. 15% off for nonprofits.' },
+    { title: 'Free 30-minute call', text: 'We talk through what you need in plain language. No pressure.' },
+    { title: 'Hourly work', text: '$125 an hour for work not covered by a package. $200 an hour for after-hours or emergency work.' },
+    { title: 'Simple payment terms', text: "Pay 50% to start a project and 50% when it's done. Monthly plans are paid at the start of each month." },
+    { title: 'Discounts', text: 'Save 10% when you combine a security plan with website care. Nonprofits save 15%.' },
   ],
-  footer: "Not sure what fits? Tell me what you're working on and I'll recommend a package.",
+  footer: "Not sure which one fits? Tell me what you're working on and I'll recommend one.",
 }
