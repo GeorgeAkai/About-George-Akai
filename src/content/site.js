@@ -1,6 +1,6 @@
 /**
  * ─────────────────────────────────────────────────────────────
- *  SITE CONTENT — edit this one file to fill in the landing page.
+ *  SITE CONTENT: edit this one file to fill in the landing page.
  * ─────────────────────────────────────────────────────────────
  *
  *  Anything written in [SQUARE BRACKETS] is a placeholder and is shown on
@@ -35,7 +35,7 @@ export const business = {
   /** Formspree endpoint (existing form). Swap for a Resend route or other backend if needed. */
   formEndpoint: 'https://formspree.io/f/mjykojpl',
   /** Path under /public, e.g. '/george-headshot.webp'. Leave as placeholder until a real photo exists. */
-  headshot: '[PROFESSIONAL HEADSHOT — real photo, not stock]',
+  headshot: '[PROFESSIONAL HEADSHOT: real photo, not stock]',
   /** Included support after launch, in days. */
   supportDays: '[30]',
 }
@@ -53,16 +53,16 @@ export const hero = {
   pill: 'Software · AI · Cybersecurity for growing businesses',
   title: 'Secure, custom technology that helps your business grow.',
   subtitle:
-    'I design and build custom software, AI assistants and security programs for small and mid-sized businesses — with fixed-scope pricing, weekly updates, and one senior consultant accountable from first call to launch.',
+    'I design and build custom software, AI assistants and security programs for small and mid-sized businesses, with fixed-scope pricing, weekly updates, and one senior consultant accountable from first call to launch.',
   primaryCta: 'Book a free 30-min strategy call',
   secondaryCta: 'See recent work',
   checks: ['Based in California, remote-friendly', 'Reply within 1 business day', 'NDA available on request'],
   card: {
     eyebrow: 'Your free strategy call',
-    title: "Leave with a clear plan — even if you don't hire me.",
+    title: "Leave with a clear plan, even if you don't hire me.",
     steps: [
       'We review your goals, current systems and biggest risks.',
-      'I outline the right approach — build, buy, or fix what you have.',
+      'I outline the right approach: build, buy, or fix what you have.',
       'You get a written summary with a ballpark budget and timeline within 48 hours.',
     ],
   },
@@ -133,7 +133,7 @@ export const services = {
     {
       icon: 'chat',
       title: 'AI Chatbot Integrations',
-      text: 'AI assistants trained on your own documents that answer customers, qualify leads and support your staff — around the clock.',
+      text: 'AI assistants trained on your own documents that answer customers, qualify leads and support your staff around the clock.',
       bullets: [
         'Website and support chatbots',
         'Internal knowledge assistants',
@@ -243,7 +243,7 @@ export const caseStudies = [
 export const testimonials = [
   {
     quote:
-      '[Paste a real client quote here — ideally naming a specific result, like time saved or a problem solved.]',
+      '[Paste a real client quote here, ideally naming a specific result, like time saved or a problem solved.]',
     name: '[Client Name]',
     title: '[Title]',
     company: '[Company]',
@@ -251,7 +251,7 @@ export const testimonials = [
   },
   {
     quote:
-      '[Second real client quote — ideally about communication, reliability or delivering on time and on budget.]',
+      '[Second real client quote, ideally about communication, reliability or delivering on time and on budget.]',
     name: '[Client Name]',
     title: '[Title]',
     company: '[Company]',
@@ -291,7 +291,7 @@ export const process = {
 }
 
 export const about = {
-  title: 'You work directly with me — not a junior team or an offshore handoff.',
+  title: 'You work directly with me, not a junior team or an offshore handoff.',
   paragraphs: [
     "I'm George Akai, founder of George Akai Tech Consulting. [2–3 sentences: background, years of experience, where you've worked, why you started the firm.]",
     "My focus is simple: build technology that's secure by default, easy for your team to use, and documented well enough that you're never locked in.",
@@ -321,7 +321,7 @@ export const guarantees = {
 export const faqs = [
   {
     q: 'How much does a typical project cost?',
-    a: "Most projects fall between [$X] and [$Y] depending on scope. After our free call you'll get a fixed quote — never an open-ended hourly bill.",
+    a: "Most projects fall between [$X] and [$Y] depending on scope. After our free call you'll get a fixed quote, never an open-ended hourly bill.",
   },
   {
     q: 'How long does it take?',
@@ -350,7 +350,7 @@ export const contact = {
   budgetOptions: ['Under $5k', '$5k–$15k', '$15k–$50k', '$50k+'],
   submit: 'Request my free strategy call',
   microcopy: 'Your information is kept confidential and never shared. Reply within 1 business day.',
-  success: "Thanks — I'll be in touch within one business day.",
+  success: "Thanks! I'll be in touch within one business day.",
 }
 
 /**
