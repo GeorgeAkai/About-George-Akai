@@ -18,8 +18,9 @@ To hide a block until it's ready, empty its array in `site.js`:
       (you already have screenshots in `/public`, e.g. `reservation engine.png`, `AI RAG chat assistant.png`, `sofelk.png`, if they match a real client story)
 - [ ] **2+ real testimonials** with name, title, company (with permission): `testimonials`
 - [ ] **Reviews link** (Google Business / Clutch): `reviews.label`, `reviews.url`
-- [ ] **Starting prices** for each service: `services.items[].price`
-- [ ] **FAQ ranges**: price `[$X]–[$Y]`, timelines `[2–6]`, `[6–12]`, `[1–2]` weeks, regions `[the US / your regions]`: `faqs`
+- [x] **Starting prices** for each service: `services.items[].price` (set from the pricing table)
+- [ ] **Pricing table**: all plans, add-ons and terms live in `pricing` in `site.js`; keep them in sync with your proposals
+- [ ] **FAQ ranges**: price `[$X]–[$Y]` (should match the pricing table), timelines `[2–6]`, `[6–12]`, `[1–2]` weeks, regions `[the US / your regions]`: `faqs`
 - [ ] **Included support days**: `business.supportDays` (currently `[30]`, used in Process, Low-risk and FAQ)
 - [ ] **Bio** (2–3 sentences): `about.paragraphs[0]`
 - [ ] **About credential tiles**: degree/school, certification, past employer/client, tech stack: `about.credentials`

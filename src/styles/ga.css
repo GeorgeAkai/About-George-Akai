@@ -860,3 +860,131 @@ section[aria-labelledby='guarantees-title'] .ga-h2 { margin-bottom: 44px; }
   .ga-spin { animation: none; }
   .ga-btn svg, .ga-faq-icon::after { transition: none; }
 }
+
+/* ---------- Pricing ---------- */
+.ga-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.ga-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px;
+  margin-bottom: 32px;
+  border: 1px solid var(--navy-line);
+  border-radius: 14px;
+  background: var(--navy-900);
+}
+.ga-tab {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--on-dark-muted);
+  font: 600 15px/1 var(--font-body);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.ga-tab:hover { color: #fff; }
+.ga-tab { white-space: nowrap; }
+.ga-tab-short { display: none; }
+.ga-tab[aria-selected='true'] { background: #18233d; color: #fff; box-shadow: inset 0 0 0 1px #2c3a5c; }
+.ga-tabpanel:focus-visible { outline-offset: 6px; }
+
+.ga-plans { align-items: stretch; }
+.ga-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px;
+  background: var(--navy-900);
+  border: 1px solid var(--navy-line);
+  border-radius: var(--radius-lg);
+}
+.ga-plan.is-featured { border: 2px solid var(--accent); padding: 27px 25px; }
+.ga-plan .ga-badge { left: 24px; }
+.ga-plan-name { margin: 0 0 6px; font: 600 20px/1.3 var(--font-head); letter-spacing: -0.01em; color: #fff; }
+.ga-plan-for { margin: 0 0 20px; font-size: 15px; color: var(--on-dark-muted); min-height: 3.1em; }
+.ga-plan-price { margin: 0; color: var(--on-dark-muted); font-size: 14px; }
+.ga-plan-amount { font: 700 36px/1.1 var(--font-head); letter-spacing: -0.02em; color: #fff; }
+.ga-plan-note { margin: 4px 0 22px; min-height: 1.5em; font-size: 14px; font-weight: 500; color: var(--accent-on-dark); }
+.ga-plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 26px !important;
+  padding-top: 20px !important;
+  border-top: 1px solid var(--navy-line);
+  font-size: 15px;
+  color: var(--on-dark);
+  flex: 1;
+}
+.ga-plan-features li { display: flex; gap: 10px; align-items: flex-start; }
+.ga-plan-features svg { color: var(--success); margin-top: 3px; flex-shrink: 0; }
+
+.ga-extras-title { margin: 40px 0 14px; font: 600 17px/1.3 var(--font-head); color: #fff; }
+.ga-extras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ga-extras li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--navy-line);
+  border-radius: var(--radius);
+  background: var(--navy-900);
+  font-size: 15px;
+  color: var(--on-dark);
+}
+.ga-extras-price { flex-shrink: 0; white-space: nowrap; font-weight: 600; color: var(--success); }
+
+.ga-pricing-notes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 48px 0 0 !important;
+  padding-top: 28px;
+  border-top: 1px solid var(--navy-line);
+}
+.ga-pricing-notes dt { margin-bottom: 4px; font-weight: 600; color: #fff; }
+.ga-pricing-notes dd { font-size: 15px; color: var(--on-dark-muted); }
+
+.ga-pricing-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-top: 40px;
+  padding: 24px 28px;
+  border: 1px solid var(--navy-line);
+  border-radius: var(--radius-lg);
+  background: var(--navy-900);
+}
+.ga-pricing-cta p { margin: 0; font-size: 17px; color: var(--on-dark); max-width: 56ch; }
+
+@media (max-width: 1024px) {
+  .ga-plans { grid-template-columns: 1fr; max-width: 640px; gap: 28px; }
+  .ga-plan-for { min-height: 0; }
+  .ga-pricing-notes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .ga-tabs { display: flex; width: 100%; flex-wrap: nowrap; }
+  .ga-tab { flex: 1; padding: 0 8px; font-size: 14px; }
+  .ga-tab-long { display: none; }
+  .ga-tab-short { display: inline; }
+  .ga-extras { grid-template-columns: 1fr; }
+  .ga-extras li { flex-direction: column; gap: 4px; }
+  .ga-pricing-notes { grid-template-columns: 1fr; gap: 18px; }
+  .ga-pricing-cta { padding: 22px; }
+  .ga-pricing-cta .ga-btn { width: 100%; }
+}
+@media (max-width: 370px) {
+  .ga-tab { font-size: 13px; padding: 0 4px; }
+}

@@ -30,6 +30,7 @@ import {
 } from '../content/site'
 import { ContactSection, ImageSlot, LinkedInIcon, SectionLink } from '../components/ui'
 import { useSectionReveal } from '../hooks/useSectionReveal'
+import Pricing from '../components/Pricing'
 
 const serviceIcons = { code: Code2, chat: MessageSquare, shield: ShieldCheck }
 const guaranteeIcons = { quote: FileCheck, key: KeyRound, lock: Lock, support: LifeBuoy }
@@ -492,6 +493,7 @@ export default function Home() {
       <Results />
       <Testimonials />
       <Process />
+      <Pricing />
       <About />
       <Guarantees />
       <Faq />

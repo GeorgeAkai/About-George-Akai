@@ -44,6 +44,7 @@ export const nav = [
   { label: 'Services', hash: 'services' },
   { label: 'Results', hash: 'work' },
   { label: 'Process', hash: 'process' },
+  { label: 'Pricing', hash: 'pricing' },
   { label: 'About', hash: 'about' },
   { label: 'FAQ', hash: 'faq' },
 ]
@@ -125,7 +126,7 @@ export const services = {
         'You own 100% of the code',
       ],
       pricePrefix: 'Projects from',
-      price: '[YOUR PRICE]',
+      price: '$1,500',
       cta: 'Discuss a build',
       formValue: 'Custom software / website',
     },
@@ -140,7 +141,7 @@ export const services = {
         'Privacy-safe: your data stays yours',
       ],
       pricePrefix: 'Setups from',
-      price: '[YOUR PRICE]',
+      price: '$1,200',
       cta: 'Explore an AI assistant',
       formValue: 'AI chatbot',
       featured: true,
@@ -156,8 +157,8 @@ export const services = {
         'Incident response planning',
         'Staff security awareness training',
       ],
-      pricePrefix: 'Assessments from',
-      price: '[YOUR PRICE]',
+      pricePrefix: 'Plans from',
+      price: '$250/mo',
       cta: 'Get a security review',
       formValue: 'Cybersecurity',
     },
@@ -307,4 +308,164 @@ export const contact = {
   submit: 'Request my free strategy call',
   microcopy: 'Your information is kept confidential and never shared. Reply within 1 business day.',
   success: "Thanks — I'll be in touch within one business day.",
+}
+
+/**
+ * Pricing section. Each tab maps to a contact-form service so "Get a quote"
+ * pre-selects the right option. `featured: true` highlights a card.
+ */
+export const pricing = {
+  eyebrow: 'Pricing',
+  title: 'Clear prices, before any work starts.',
+  subtitle:
+    'Most work is fixed-price, so you know the cost upfront. These are starting points. After a free discovery call, you get a written scope and an exact quote.',
+  badge: 'Most popular',
+  cta: 'Get a quote',
+  tabs: [
+    {
+      id: 'web',
+      label: 'Software & Web',
+      shortLabel: 'Software',
+      formValue: 'Custom software / website',
+      plans: [
+        {
+          name: 'Starter Site',
+          for: 'For new or small businesses that need a professional presence.',
+          amount: '$1,500',
+          note: 'One-time',
+          features: ['Up to 5 pages, mobile-first', 'Contact form', 'Google Business Profile setup', 'Security basics built in'],
+        },
+        {
+          name: 'Business Site',
+          for: 'For businesses that want the site to bring in customers.',
+          amount: '$3,500',
+          note: 'One-time',
+          featured: true,
+          features: ['Up to 12 pages', 'Online booking or ordering', 'Basic SEO and review integration', 'Analytics setup'],
+        },
+        {
+          name: 'Web Apps & Automation',
+          for: 'Dashboards, internal tools, APIs and integrations.',
+          from: true,
+          amount: '$2,500',
+          note: 'Scoped per project',
+          features: [
+            'Custom web applications',
+            'API design and integrations',
+            'Workflow and spreadsheet automation',
+            'Online stores from $5,500',
+          ],
+        },
+      ],
+      extrasTitle: 'Monthly care plans',
+      extras: [
+        { label: 'Care: hosting, security updates, backups, 30 min of edits', price: '$75/mo' },
+        { label: 'Growth: Care + 2 hrs of edits and a monthly report', price: '$200/mo' },
+      ],
+    },
+    {
+      id: 'ai',
+      label: 'AI Chatbots',
+      shortLabel: 'AI Chatbots',
+      formValue: 'AI chatbot',
+      plans: [
+        {
+          name: 'Website Chat Assistant',
+          for: 'An assistant trained on your business that answers customers 24/7.',
+          amount: '$1,200',
+          unit: 'setup',
+          note: '+ $150/mo',
+          featured: true,
+          features: [
+            'Trained on your documents and FAQs',
+            'Captures leads and quote requests',
+            'Books appointments',
+            'Monthly tuning and monitoring',
+          ],
+        },
+        {
+          name: 'AI Phone & Text Answering',
+          for: 'Never miss a call. Answers, books and texts back.',
+          amount: '$1,500',
+          unit: 'setup',
+          note: '+ $250/mo (call usage at cost)',
+          features: ['Answers missed and after-hours calls', 'Books appointments', 'Text follow-ups', 'Call summaries sent to you'],
+        },
+        {
+          name: 'Custom AI & Internal Assistants',
+          for: 'RAG knowledge assistants and agentic workflow automation.',
+          from: true,
+          amount: '$2,500',
+          note: 'Scoped per project',
+          features: [
+            'Internal knowledge assistants',
+            'Workflow and agentic automation',
+            'Integrations with your tools',
+            'Security reviewed before launch',
+          ],
+        },
+      ],
+      extrasTitle: 'Training',
+      extras: [
+        {
+          label: 'AI at Work team workshop: safe AI use, hands-on setup and a written AI policy (up to 10 people)',
+          price: '$750 / half day',
+        },
+      ],
+    },
+    {
+      id: 'sec',
+      label: 'Cybersecurity',
+      shortLabel: 'Security',
+      formValue: 'Cybersecurity',
+      plans: [
+        {
+          name: 'Watch',
+          for: 'For tiny offices of up to 5 people.',
+          amount: '$250',
+          unit: '/mo flat',
+          note: '3-month minimum',
+          features: ['Quarterly security review', 'Monthly phishing simulation', 'Email support', 'Annual policy update'],
+        },
+        {
+          name: 'Protect',
+          for: 'Managed protection for most small businesses.',
+          amount: '$75',
+          unit: '/user/mo',
+          note: '$375/mo minimum',
+          featured: true,
+          features: ['Everything in Watch', 'Managed endpoint protection', 'Backup and account monitoring', 'Patch oversight'],
+        },
+        {
+          name: 'Shield',
+          for: 'For regulated offices: medical, dental, legal, CPA.',
+          amount: '$125',
+          unit: '/user/mo',
+          note: '$750/mo minimum',
+          features: [
+            'Everything in Protect',
+            'Annual compliance assessment',
+            'Incident response on call',
+            'Quarterly strategy meeting',
+          ],
+        },
+      ],
+      extrasTitle: 'One-time assessments',
+      extras: [
+        { label: 'Security Essentials Assessment (1–10 users)', price: '$1,500' },
+        { label: 'HIPAA Security Risk Assessment', price: '$2,500' },
+        { label: 'IRS WISP Package (CPAs, tax preparers)', price: '$1,800' },
+        { label: 'Law Firm Security Package', price: '$2,500' },
+        { label: 'Cyber Insurance Questionnaire Help', price: '$350' },
+        { label: 'Staff phishing training (up to 15 people)', price: '$400' },
+      ],
+    },
+  ],
+  notes: [
+    { title: 'Free discovery call', text: '30 minutes to talk through what you need. No pressure, no jargon.' },
+    { title: 'Hourly work', text: '$125/hr for work outside a package. $200/hr after hours or emergencies.' },
+    { title: 'Simple terms', text: '50% deposit to start projects, 50% on delivery. Monthly plans billed in advance.' },
+    { title: 'Discounts', text: '10% off when you combine a security plan and a care plan. 15% off for nonprofits.' },
+  ],
+  footer: "Not sure what fits? Tell me what you're working on and I'll recommend a package.",
 }
