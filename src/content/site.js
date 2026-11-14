@@ -10,7 +10,7 @@
  *  - Only publish facts you can back up: real client names, real quotes
  *    (with permission), real numbers, real certifications.
  *  - To hide a whole block until it's ready, empty its array:
- *      clientLogos: []   → hides the logo row
+ *      clientLogos: []   → hides the logo row (currently hidden)
  *      testimonials: []  → hides the testimonials section
  *      stats: []         → hides the proof-stats row
  *  - Images go in /public. Prefer .webp or .avif, about 1600px wide max.
@@ -24,7 +24,7 @@ export const business = {
   shortName: 'George Akai',
   founder: 'George Akai',
   founderTitle: 'Founder & Principal Consultant',
-  keyCredential: '[YOUR KEY CREDENTIAL]',
+  keyCredential: 'BS Computer Information Systems and Cybersecurity',
   entity: '[LLC / business entity]',
   region: 'California',
   url: 'https://georgeakaitechconsulting.com',
@@ -34,10 +34,11 @@ export const business = {
   calendarUrl: '[CALENDLY/CAL.COM URL]',
   /** Formspree endpoint (existing form). Swap for a Resend route or other backend if needed. */
   formEndpoint: 'https://formspree.io/f/mjykojpl',
-  /** Path under /public, e.g. '/george-headshot.webp'. Leave as placeholder until a real photo exists. */
-  headshot: '[PROFESSIONAL HEADSHOT: real photo, not stock]',
+  /** Real photos under /public: 4:5 portrait (About) and a square face crop (hero card). */
+  headshot: '/george-headshot.webp',
+  avatar: '/george-avatar.webp',
   /** Included support after launch, in days. */
-  supportDays: '[30]',
+  supportDays: '30',
 }
 
 export const nav = [
@@ -68,26 +69,23 @@ export const hero = {
   },
 }
 
-/** Client logos: { name, src } with src under /public. Placeholders render as dashed boxes. */
-export const clientLogos = [
-  { name: '[CLIENT LOGO 1]', src: null },
-  { name: '[CLIENT LOGO 2]', src: null },
-  { name: '[CLIENT LOGO 3]', src: null },
-  { name: '[CLIENT LOGO 4]', src: null },
-  { name: '[CLIENT LOGO 5]', src: null },
-]
+/** Client logos: { name, src } with src under /public. Empty = row hidden. */
+export const clientLogos = []
 
+/** Shown in the bar under the hero. */
+export const credentialsLabel = 'Credentials'
 export const credentials = [
-  '[CERTIFICATION e.g. CompTIA Security+]',
-  '[CLOUD CERT e.g. AWS Certified]',
-  '[REGISTERED BUSINESS / INSURED]',
+  "Bachelor's Degree in Computer Information Systems",
+  'CompTIA Security+',
+  'Google Cybersecurity Certificate',
+  'AWS Building Generative AI Solutions',
 ]
 
 /** Only keep stats you can verify. */
 export const stats = [
-  { value: '[XX]+', label: 'Projects delivered' },
-  { value: '[X] yrs', label: 'Building production software' },
-  { value: '[XX]%', label: 'Clients who return or refer' },
+  { value: '5+', label: 'Projects delivered' },
+  { value: '1 yr', label: 'Building production software' },
+  { value: '90%', label: 'Clients who return or refer' },
   { value: '<24 hr', label: 'Response time on support' },
 ]
 
@@ -208,60 +206,49 @@ export const portfolio = {
   ],
 }
 
-/** Case studies. `image`: path under /public (16:9 works best), or null for a placeholder. */
+/**
+ * Client results (challenge → solution → outcome). Add AI and cybersecurity
+ * results here as they happen. `image`: path under /public, or null.
+ */
 export const caseStudies = [
   {
-    tag: 'Custom software · [INDUSTRY]',
-    title: '[Client type] replaced [manual process] with a custom portal',
-    challenge: '[One sentence on the problem.]',
-    solution: '[One sentence on what you built.]',
-    metric: '[XX hrs/week saved]',
-    image: null,
-    imageAlt: '',
+    tag: 'Custom software · Beauty & fashion retail',
+    title: 'Kenrish Collection moved from paper admin to one modern dashboard',
+    challenge: 'Accounting, inventory, HR and customer records were all managed by hand.',
+    solution:
+      'A custom dashboard that brings accounting, inventory, HR and customer relationship management together and automates the manual tasks.',
+    metric: 'Hours saved, no more guesswork',
+    image: '/portfolio/kenrish-admin.webp',
+    imageAlt: 'Kenrish admin menu with Executive Dashboard, Customer & Order Management, Expenses, Employees and Invoices',
   },
   {
-    tag: 'AI chatbot · [INDUSTRY]',
-    title: '[Client type] now answers customer questions 24/7',
-    challenge: '[One sentence on the problem.]',
-    solution: '[One sentence on what you built.]',
-    metric: '[XX% of tickets resolved]',
-    image: null,
-    imageAlt: '',
-  },
-  {
-    tag: 'Cybersecurity · [INDUSTRY]',
-    title: '[Client type] closed critical gaps before an insurance renewal',
-    challenge: '[One sentence on the problem.]',
-    solution: '[One sentence on what you did.]',
-    metric: '[XX issues fixed]',
-    image: null,
-    imageAlt: '',
+    tag: 'Lead-generation website · Stucco contractor',
+    title: 'Mid Valley Lath & Plaster turned its website into a lead source',
+    challenge: 'Homeowners needed a fast way to reach a licensed stucco contractor from their phones.',
+    solution:
+      'A mobile-first site with tap-to-call, text and a free-estimate request form, backed by license and experience details.',
+    metric: 'Calls and estimate requests in one tap',
+    image: '/portfolio/midvalley-home.webp',
+    imageAlt: 'Mid Valley Lath & Plaster home page with call and free estimate buttons',
   },
 ]
 
-/** Real quotes only, with permission. Empty the array to hide the section. */
+/** Real quotes only, with permission. Empty the array to hide the section. `rating` (1–5) is optional. */
 export const testimonials = [
   {
     quote:
-      '[Paste a real client quote here, ideally naming a specific result, like time saved or a problem solved.]',
-    name: '[Client Name]',
-    title: '[Title]',
-    company: '[Company]',
-    avatar: null,
-  },
-  {
-    quote:
-      '[Second real client quote, ideally about communication, reliability or delivering on time and on budget.]',
-    name: '[Client Name]',
-    title: '[Title]',
-    company: '[Company]',
+      'George built a modern system for me that has revolutionized how I do admin work. I have moved from paper accounting into automated workflows, which helps me see what is going on in my business.',
+    name: 'Elizabeth Ekale',
+    title: 'Owner & CEO',
+    company: 'Kenrish Collection',
     avatar: null,
   },
 ]
 
+/** Link to public reviews (Google Business, Clutch). Leave url empty to hide the line. */
 export const reviews = {
-  label: '[Link to Google Business / Clutch reviews]',
-  url: '[REVIEWS URL]',
+  label: '',
+  url: '',
 }
 
 export const process = {
@@ -293,14 +280,14 @@ export const process = {
 export const about = {
   title: 'You work directly with me, not a junior team or an offshore handoff.',
   paragraphs: [
-    "I'm George Akai, founder of George Akai Tech Consulting. [2–3 sentences: background, years of experience, where you've worked, why you started the firm.]",
+    "I'm George Akai, founder of George Akai Tech Consulting. I hold a BS in Computer Information Systems and Cybersecurity and worked as an Information Security Analyst Assistant at CSU Chico. I started this firm to give growing businesses the kind of secure, well-built technology usually reserved for large companies.",
     "My focus is simple: build technology that's secure by default, easy for your team to use, and documented well enough that you're never locked in.",
   ],
   credentials: [
-    { label: 'Education', value: '[Degree / School]' },
-    { label: 'Certification', value: '[Certification]' },
-    { label: 'Experience', value: '[Notable past employer / client]' },
-    { label: 'Tech stack', value: '[Tech stack]' },
+    { label: 'Education', value: 'BS, Computer Information Systems & Cybersecurity' },
+    { label: 'Certifications', value: 'CompTIA Security+ · Google Cybersecurity · AWS Building Generative AI Solutions' },
+    { label: 'Experience', value: 'Information Security Analyst Assistant, CSU Chico' },
+    { label: 'Tech stack', value: 'React, Python, Node.js, C++' },
   ],
 }
 
@@ -321,15 +308,15 @@ export const guarantees = {
 export const faqs = [
   {
     q: 'How much does a typical project cost?',
-    a: "Most projects fall between [$X] and [$Y] depending on scope. After our free call you'll get a fixed quote, never an open-ended hourly bill.",
+    a: "Most projects fall between $1,000 and $3,000 depending on scope. After our free call you'll get a fixed quote, never an open-ended hourly bill.",
   },
   {
     q: 'How long does it take?',
-    a: 'Websites and chatbots usually launch in [2–6] weeks; custom software in [6–12] weeks. Security assessments take about [1–2] weeks.',
+    a: 'Websites and chatbots usually launch in 2–6 weeks; custom software in 6–12 weeks. Security assessments take about 1–2 weeks.',
   },
   {
     q: 'Do you work with businesses outside California?',
-    a: "Yes. I'm based in California and work remotely with clients across [the US / your regions], with on-site visits available locally.",
+    a: "Yes. I'm based in California and work remotely with clients across the US and Kenya, with on-site visits available locally.",
   },
   {
     q: 'What happens after launch?',

@@ -593,7 +593,9 @@ html { scroll-padding-top: 80px; }
 }
 
 /* ---------- Testimonials ---------- */
-.ga-quote { display: flex; flex-direction: column; gap: 20px; padding: 32px; }
+.ga-quote { display: flex; flex-direction: column; gap: 20px; }
+.ga-home .ga-quote { padding: 36px 40px; }
+@media (max-width: 720px) { .ga-home .ga-quote { padding: 24px; } }
 .ga-stars { display: flex; gap: 3px; color: var(--star); }
 .ga-quote blockquote p { margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-2); }
 .ga-quote figcaption { display: flex; align-items: center; gap: 12px; margin-top: auto; }
@@ -1134,4 +1136,51 @@ section[aria-labelledby='guarantees-title'] .ga-h2 { margin-bottom: 44px; }
   .ga-hero-work ul { flex-direction: column; width: 100%; }
   .ga-hero-work-item { width: 100%; }
   .ga-hero-work-all { margin-left: 0; }
+}
+
+/* ---------- Credentials bar ---------- */
+.ga-cred-pills li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+.ga-cred-pills svg { color: var(--accent); flex-shrink: 0; }
+@media (max-width: 720px) {
+  .ga-cred-pills { flex-direction: column; align-items: stretch; width: 100%; }
+  .ga-cred-pills li { border-radius: var(--radius); }
+}
+
+/* ---------- Client results: phone screenshot in a device frame ---------- */
+.ga-case-media {
+  display: flex;
+  justify-content: center;
+  height: 230px;
+  padding-top: 26px;
+  overflow: hidden;
+  background: var(--navy-850);
+  border-bottom: 1px solid var(--navy-line);
+}
+.ga-case-media img {
+  flex: none;
+  align-self: flex-start;
+  width: 168px;
+  height: auto;
+  border: 6px solid var(--navy-line-strong);
+  border-bottom: 0;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 20px 40px -18px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Testimonials: single quote, initials avatar ---------- */
+.ga-quote-single { max-width: 780px; margin: 0 auto; }
+.ga-quote-single .ga-quote blockquote p { font-size: 20px; }
+.ga-quote-initials {
+  display: grid;
+  place-items: center;
+  background: var(--accent-tint);
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
 }

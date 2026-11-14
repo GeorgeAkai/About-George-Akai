@@ -11,6 +11,7 @@ import {
   Shield,
   ShieldCheck,
   Star,
+  BadgeCheck,
 } from 'lucide-react'
 import {
   about,
@@ -18,6 +19,7 @@ import {
   caseStudies,
   clientLogos,
   credentials,
+  credentialsLabel,
   faqs,
   guarantees,
   hero,
@@ -109,12 +111,12 @@ function Hero() {
             ))}
           </ol>
           <div className="ga-call-person">
-            {isPlaceholder(business.headshot) ? (
+            {isPlaceholder(business.avatar) ? (
               <div className="ga-avatar ga-avatar-ph" role="img" aria-label="Photo of George Akai (placeholder)">
                 PHOTO
               </div>
             ) : (
-              <img className="ga-avatar" src={business.headshot} alt="George Akai" width="52" height="52" />
+              <img className="ga-avatar" src={business.avatar} alt="George Akai" width="52" height="52" />
             )}
             <div>
               <p className="ga-call-name">{business.founder}</p>
@@ -156,11 +158,13 @@ function Hero() {
 function TrustBar() {
   if (!clientLogos.length && !credentials.length) return null
   return (
-    <section className="ga-trust" aria-label="Clients and credentials">
+    <section className="ga-trust" aria-labelledby="trust-title">
       <div className="ga-container ga-trust-inner">
         {clientLogos.length > 0 && (
           <>
-            <p className="ga-trust-label">Trusted by teams at</p>
+            <p className="ga-trust-label" id="trust-title">
+              Trusted by teams at
+            </p>
             <ul className="ga-logos">
               {clientLogos.map((l) => (
                 <li key={l.name}>
@@ -175,11 +179,21 @@ function TrustBar() {
           </>
         )}
         {credentials.length > 0 && (
-          <ul className="ga-cred-pills" aria-label="Credentials">
-            {credentials.map((c) => (
-              <li key={c}>{c}</li>
-            ))}
-          </ul>
+          <>
+            {!clientLogos.length && (
+              <p className="ga-trust-label" id="trust-title">
+                {credentialsLabel}
+              </p>
+            )}
+            <ul className="ga-cred-pills">
+              {credentials.map((c) => (
+                <li key={c}>
+                  <BadgeCheck size={18} aria-hidden="true" />
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </div>
     </section>
@@ -347,11 +361,13 @@ function Results() {
             Discuss a similar project <ArrowRight size={16} aria-hidden="true" />
           </SectionLink>
         </header>
-        <div className="ga-grid-3">
+        <div className={caseStudies.length === 2 ? 'ga-grid-2' : 'ga-grid-3'}>
           {caseStudies.map((c) => (
             <article key={c.title} className="ga-case ga-reveal">
               {c.image ? (
-                <img className="ga-case-img" src={c.image} alt={c.imageAlt} loading="lazy" width="640" height="360" />
+                <div className="ga-case-media">
+                  <img src={c.image} alt={c.imageAlt} loading="lazy" width="480" height="817" />
+                </div>
               ) : (
                 <ImageSlot label="[PROJECT SCREENSHOT]" className="ga-case-img" />
               )}
@@ -388,14 +404,16 @@ function Testimonials() {
         <h2 id="testimonials-title" className="ga-h2 ga-center ga-reveal">
           What clients say
         </h2>
-        <div className="ga-grid-2">
+        <div className={testimonials.length === 1 ? 'ga-quote-single' : 'ga-grid-2'}>
           {testimonials.map((t, i) => (
             <figure key={i} className="ga-card ga-quote ga-reveal">
-              <div className="ga-stars" role="img" aria-label="5 out of 5 stars">
-                {[0, 1, 2, 3, 4].map((n) => (
-                  <Star key={n} size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
-                ))}
-              </div>
+              {t.rating > 0 && (
+                <div className="ga-stars" role="img" aria-label={`${t.rating} out of 5 stars`}>
+                  {Array.from({ length: t.rating }, (_, n) => (
+                    <Star key={n} size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+                  ))}
+                </div>
+              )}
               <blockquote>
                 <p>
                   “<T>{t.quote}</T>”
@@ -405,7 +423,13 @@ function Testimonials() {
                 {t.avatar ? (
                   <img className="ga-quote-avatar" src={t.avatar} alt="" width="44" height="44" loading="lazy" />
                 ) : (
-                  <span className="ga-quote-avatar ga-avatar-ph" aria-hidden="true" />
+                  <span className="ga-quote-avatar ga-quote-initials" aria-hidden="true">
+                    {t.name
+                      .split(' ')
+                      .map((w) => w[0])
+                      .join('')
+                      .slice(0, 2)}
+                  </span>
                 )}
                 <span>
                   <span className="ga-quote-name">
@@ -419,16 +443,14 @@ function Testimonials() {
             </figure>
           ))}
         </div>
-        <p className="ga-reviews">
-          <T>{reviews.label}</T> ·{' '}
-          {isPlaceholder(reviews.url) ? (
-            <span>Read all reviews</span>
-          ) : (
+        {!isPlaceholder(reviews.url) && (
+          <p className="ga-reviews">
+            {reviews.label && <>{reviews.label} · </>}
             <a href={reviews.url} target="_blank" rel="noreferrer">
               Read all reviews
             </a>
-          )}
-        </p>
+          </p>
+        )}
       </div>
     </section>
   )
