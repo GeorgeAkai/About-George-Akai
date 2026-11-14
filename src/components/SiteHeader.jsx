@@ -4,40 +4,54 @@ import { Menu, X } from 'lucide-react'
 import { nav } from '../content/site'
 import { SectionLink } from './ui'
 
+/**
+ * Header with a desktop nav and a mobile menu.
+ *
+ * The mobile menu is a native <details>/<summary> disclosure, so it opens and
+ * closes even before (or without) JavaScript, e.g. in an installed PWA that is
+ * still loading or holding an older cached page. React layers on the extras:
+ * closing after a link tap, on an outside tap, and on Escape.
+ */
 export default function SiteHeader() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
-  const toggleRef = useRef(null)
-  const headerRef = useRef(null)
+  const menuRef = useRef(null)
+  const summaryRef = useRef(null)
   const close = () => setOpen(false)
 
   // Close on every navigation, including a repeat tap on the current section link.
   useEffect(() => setOpen(false), [location.pathname, location.hash, location.key])
 
-  // Close when tapping or clicking anywhere outside the header.
+  // While open: close on an outside tap/click or on Escape.
   useEffect(() => {
     if (!open) return
     const onPointerDown = (e) => {
-      if (!headerRef.current?.contains(e.target)) setOpen(false)
+      if (!menuRef.current?.contains(e.target)) setOpen(false)
     }
-    document.addEventListener('pointerdown', onPointerDown)
-    return () => document.removeEventListener('pointerdown', onPointerDown)
-  }, [open])
-
-  useEffect(() => {
-    if (!open) return
     const onKey = (e) => {
       if (e.key === 'Escape') {
         setOpen(false)
-        toggleRef.current?.focus()
+        summaryRef.current?.focus()
       }
     }
+    document.addEventListener('pointerdown', onPointerDown)
     document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKey)
+    }
   }, [open])
 
+  const links = nav.map((item) => (
+    <li key={item.hash}>
+      <SectionLink hash={item.hash} className="ga-nav-link" onClick={close}>
+        {item.label}
+      </SectionLink>
+    </li>
+  ))
+
   return (
-    <header ref={headerRef} className={`ga-header${open ? ' is-open' : ''}`}>
+    <header className="ga-header">
       <div className="ga-container ga-header-inner">
         <Link to="/" className="ga-logo" onClick={close}>
           <span className="ga-logo-mark" aria-hidden="true">
@@ -48,16 +62,8 @@ export default function SiteHeader() {
           </span>
         </Link>
 
-        <nav id="primary-nav" className="ga-nav" aria-label="Main">
-          <ul>
-            {nav.map((item) => (
-              <li key={item.hash}>
-                <SectionLink hash={item.hash} className="ga-nav-link" onClick={close}>
-                  {item.label}
-                </SectionLink>
-              </li>
-            ))}
-          </ul>
+        <nav className="ga-nav" aria-label="Main">
+          <ul>{links}</ul>
         </nav>
 
         <div className="ga-header-cta">
@@ -65,17 +71,16 @@ export default function SiteHeader() {
             <span className="ga-cta-long">Book a free consult</span>
             <span className="ga-cta-short">Free consult</span>
           </SectionLink>
-          <button
-            ref={toggleRef}
-            type="button"
-            className="ga-menu-btn"
-            aria-expanded={open}
-            aria-controls="primary-nav"
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            onClick={() => setOpen((o) => !o)}
-          >
-            {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
-          </button>
+
+          <details ref={menuRef} className="ga-menu" open={open} onToggle={(e) => setOpen(e.currentTarget.open)}>
+            <summary ref={summaryRef} className="ga-menu-btn" aria-label="Menu">
+              <Menu size={22} aria-hidden="true" className="ga-menu-icon-open" />
+              <X size={22} aria-hidden="true" className="ga-menu-icon-close" />
+            </summary>
+            <nav className="ga-menu-panel" aria-label="Main">
+              <ul>{links}</ul>
+            </nav>
+          </details>
         </div>
       </div>
     </header>

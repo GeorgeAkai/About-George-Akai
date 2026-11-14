@@ -205,6 +205,7 @@ html { scroll-padding-top: 80px; }
   position: sticky;
   top: 0;
   z-index: 100;
+  padding-top: env(safe-area-inset-top, 0px);
   background: var(--navy-950);
   border-bottom: 1px solid var(--navy-line);
   color: var(--on-dark);
@@ -261,8 +262,9 @@ html { scroll-padding-top: 80px; }
 .ga-btn-nav { min-height: 44px; padding: 0 18px; font-size: 15px; white-space: nowrap; }
 .ga-cta-short { display: none; }
 
+.ga-menu { display: none; }
 .ga-menu-btn {
-  display: none;
+  display: grid;
   place-items: center;
   width: 44px;
   height: 44px;
@@ -271,24 +273,32 @@ html { scroll-padding-top: 80px; }
   background: transparent;
   color: #fff;
   cursor: pointer;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
+.ga-menu-btn::-webkit-details-marker { display: none; }
+.ga-menu-btn::marker { content: ''; }
+.ga-menu-icon-close { display: none; }
+.ga-menu[open] .ga-menu-icon-open { display: none; }
+.ga-menu[open] .ga-menu-icon-close { display: block; }
+.ga-menu[open] .ga-menu-btn { background: rgba(255, 255, 255, 0.06); }
+.ga-menu-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--navy-950);
+  border-bottom: 1px solid var(--navy-line);
+  box-shadow: 0 24px 40px -12px rgba(0, 0, 0, 0.6);
+  padding: 8px var(--gutter) 20px;
+}
+.ga-menu-panel ul { display: flex; flex-direction: column; gap: 2px; max-width: var(--container); margin: 0 auto; padding: 0; list-style: none; }
+.ga-menu-panel .ga-nav-link { width: 100%; min-height: 52px; font-size: 17px; padding: 0 12px; }
 
 @media (max-width: 960px) {
-  .ga-menu-btn { display: grid; }
-  .ga-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--navy-950);
-    border-bottom: 1px solid var(--navy-line);
-    box-shadow: 0 24px 40px -12px rgba(0, 0, 0, 0.6);
-    padding: 8px var(--gutter) 20px;
-  }
-  .ga-header.is-open .ga-nav { display: block; }
-  .ga-nav ul { flex-direction: column; gap: 2px; max-width: var(--container); margin: 0 auto; }
-  .ga-nav-link { width: 100%; min-height: 52px; font-size: 17px; padding: 0 12px; }
+  .ga-nav { display: none; }
+  .ga-menu { display: block; }
 }
 
 @media (max-width: 560px) {
