@@ -116,7 +116,7 @@ function Hero() {
                 PHOTO
               </div>
             ) : (
-              <img className="ga-avatar" src={business.avatar} alt="George Akai" width="52" height="52" />
+              <img className="ga-avatar" src={business.avatar} alt="George Akai in graduation cap and Chico State stole" width="88" height="88" />
             )}
             <div>
               <p className="ga-call-name">{business.founder}</p>

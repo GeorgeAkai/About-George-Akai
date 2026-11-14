@@ -27,7 +27,7 @@ To hide a block until it's ready, empty its array in `site.js`:
 
 ## Done
 
-- [x] Real photo: `/george-headshot.webp` (About) and `/george-avatar.webp` (hero card)
+- [x] Real photos: `/george-headshot.webp` (About) and `/george-avatar.webp` (graduation photo, hero card)
 - [x] Key credential: BS Computer Information Systems and Cybersecurity
 - [x] Credentials bar: degree, CompTIA Security+, Google Cybersecurity Certificate, AWS Building Generative AI Solutions
 - [x] Proof stats: 5+ projects, 1 yr building production software, 90% return or refer

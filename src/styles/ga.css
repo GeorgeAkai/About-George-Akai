@@ -422,6 +422,15 @@ html { scroll-padding-top: 80px; }
   border-top: 1px solid var(--navy-line);
 }
 .ga-avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex: none; }
+/* Hero card photo: rounded square so the full cap and stole stay in frame */
+img.ga-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 16px;
+  border: 1px solid var(--navy-line-strong);
+  background: var(--navy-850);
+}
+@media (max-width: 720px) { img.ga-avatar { width: 76px; height: 76px; border-radius: 14px; } }
 .ga-avatar-ph {
   display: grid;
   place-items: center;

@@ -34,7 +34,7 @@ export const business = {
   calendarUrl: '[CALENDLY/CAL.COM URL]',
   /** Formspree endpoint (existing form). Swap for a Resend route or other backend if needed. */
   formEndpoint: 'https://formspree.io/f/mjykojpl',
-  /** Real photos under /public: 4:5 portrait (About) and a square face crop (hero card). */
+  /** Real photos under /public: 4:5 portrait (About) and a square graduation photo (hero card). */
   headshot: '/george-headshot.webp',
   avatar: '/george-avatar.webp',
   /** Included support after launch, in days. */
